@@ -1,0 +1,37 @@
+
+body {
+	background-color: #90c140;
+}
+
+.logot {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-color: #FFFFFF;
+	margin: 15% auto 10px auto;
+}
+
+.logob {
+	text-align: center;
+}
+
+.logos {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.logoc {
+	border-radius: 20%;
+	width: 68px;
+	height: 68px;
+	background-color: #EEEEEE;
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+}
+
+.logoh {
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 500px;
+}
