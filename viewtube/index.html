@@ -1,0 +1,435 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<title>by sebaro ~ ViewTube</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+
+		<link type="image/png" rel="icon" href="favicon.png">
+		<link type="text/css" rel="stylesheet" href="style.css">
+
+	</head>
+
+	<body>
+
+		<div class="header">
+			<div class="head">
+				<div class="logo"><img src="logo.png" alt="ViewTube" title="ViewTube"></div>
+				<div class="top">
+					<a class="top_entry" href="files/viewtube.user.js"><img src="images/download.png" alt="ViewTube" title="ViewTube"> ViewTube</a>
+					<a class="top_entry" href="files/viewtubeplus.user.js"><img src="images/download.png" alt="ViewTube+" title="ViewTube+"> ViewTube+</a>
+					<a class="top_entry" href="https://gitlab.com/sebaro/ViewTube"><img src="images/gitlab.png" alt="ViewTube @ GitLab" title="ViewTube @ GitLab"></a>
+					<a class="top_entry" href="https://github.com/sebaro/ViewTube"><img src="images/github.png" alt="ViewTube @ GitHub" title="ViewTube @ GitHub"></a>
+					<a class="top_entry" href="http://sebaro.pro/contact"><img src="images/question.png" alt="ViewTube Contact" title="ViewTube Contact"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="screen"></div>
+
+		<div class="info">
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/info.png" alt="About" title="About">
+				</div>
+				<div class="content_text">
+					<div>
+						ViewTube is a JavaScript application for watching videos from video websites with a video plugin, an external video player or the HTML5 video player. A download option is also available. Below are all supported sites. There is an extra script that adds support for more sites.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/video.png" alt="Sites" title="Sites">
+				</div>
+				<div class="content_text">
+					<img src="images/sites.png" alt="The main video sharing web sites on which you can watch videos using ViewTube." title="The main video sharing web sites on which you can watch videos using ViewTube.">
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/usage.png" alt="Installation" title="Installation">
+				</div>
+				<div class="content_text">
+					<div>
+						<b>Installation</b>
+						<br>
+						Read the following information on how to install the script in different browsers.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/firefox.png" alt="Firefox" title="Firefox">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Firefox based browsers the script has to be installed with one of Greasemonkey, Tampermonkey or Violentmonkey add-ons from <a href='https://addons.mozilla.org'>Mozilla Add-ons</a>. Or install the ViewTube add-on from <a href="https://addons.mozilla.org/en-US/firefox/addon/viewtube">Mozilla Add-ons</a> or manually download and install it from <a href="files/viewtube.xpi">here</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/chromium.png" alt="Chromium" title="Chromium">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Chromium based browsers the script has to be downloaded and dragged and dropped in the extensions page or installed with the Tampermonkey or Violentmonkey extension from <a href="https://chrome.google.com/webstore">Chrome Web Store</a>. Or use the ViewTube extension from <a href="https://chrome.google.com/webstore/detail/viewtube/hfkkgpcjliaiakfgljddganibplpohgn">Chrome Web Store</a> or manually download and install it from <a href="files/viewtube.crx">here</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/epiphany.png" alt="Epiphany" title="Epiphany">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Epiphany (Gnome Web) it is required to install the Greasemonkey extension from Epiphany extensions.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/midori.png" alt="Midori" title="Midori">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Midori it is required to enable the User Addons extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/falkon.png" alt="Falkon" title="Falkon">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Falkon (QupZilla) it is required to enable the GreaseMonkey extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/opera.png" alt="Opera" title="Opera">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Opera the script has to be downloaded and dragged and dropped in the extensions page or installed with extensions, Tampermonkey from <a href="https://addons.opera.com">Opera Add-ons</a> or <a href="https://violentmonkey.github.io/get-it/">Violentmonkey</a>. Or manually download and install the ViewTube extension from <a href="files/viewtube.crx">here</a>. For versions older than 15 download and save the script in the JavaScript files directory and enable "User JavaScript on HTTPS" in "opera:config" or use the Violentmonkey extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/maxthon.png" alt="Maxthon" title="Maxthon">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Maxthon it is require to install the <a href="http://extension.maxthon.com/detail/index.php?view_id=2967">ViewTube</a> extension or to install the script in the <a href='http://extension.maxthon.com/detail/index.php?view_id=1680'>Violentmonkey</a> extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/safari.png" alt="Safari" title="Safari">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Safari it is required to install one of <a href='http://safariaddons.com/en-US/safari/addon/43'>GreaseKit</a>, <a href='http://d.hatena.ne.jp/os0x/20100612/1276330696'>NinjaKit</a> or <a href="https://tampermonkey.net/?browser=safari">Tampermonkey</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/usage.png" alt="Usage" title="Usage">
+				</div>
+				<div class="content_text">
+					<div>
+						<b>Usage</b>
+						<br>
+						Read the following information on how to use the script.
+						<br><br>
+						Select the video from the menu or use the options window to select the preferred video definition and container.
+						<br><br>
+						<div class="play"></div><div class="stop"></div><i><b>Play/Stop</b></i>
+						<br>
+						Use these buttons to play/stop the video playback. Clicking the video thumbnail will also start the video playback.
+						<br><br>
+						<div class="download"></div><div class="download_link">[Link]</div><i><b>Download</b></i>
+						<br>
+						Click this button to get the video stream link. If the download doesn't start, click "Link". The browser will show the open popup window. Some browsers don't have this feature and will open/play the video, for these right click 'Link' and 'Save link as'.
+						<br><br>
+						<i>DASH</i>
+						<br>
+						Some sites use DASH streams, which are audio only and video only. These are shown in the videos menu as "Video Only" and "Audio Only". Enable DASH playback support in the options window and the videos menu will show new videos as "Video With Audio". You can play these using the browser player, a plugin or an external player, read below for more details.
+						<br><br>
+						<i>HLS</i>
+						<br>
+						Some sites use HLS streams, which breaks the stream into a sequence of small chunks. These are shown in the videos menu as "HLS". You can play these using a plugin or a browser protocol and an external script, read below for more details.
+						<br><br>
+						<div class="widesize_off"></div><div class="widesize_on"></div><i><b>Widesize</b></i>
+						<br>
+						Click these buttons to enter/exit widesize mode.
+						<br><br>
+						<div class="fullsize_off"></div><div class="fullsize_on"></div><i><b>Fullsize</b></i>
+						<br>
+						Click these buttons to enter/exit fullsize mode.
+						<br><br>
+						<div class="options"></div><i><b>Options</b></i>
+						<br>
+						Click the vertical dots to open the options window.
+						<br><br>
+						<u>Embed</u> (Video, Object, Embed, Protocol)
+						<br>
+						Select which type of embed option to use when playing the videos. Choose "Video" if you want to use the browser video player (HTML5), "Object" or "Embed" if you want to use a plugin (NPAPI, not supported anymore by most browsers) or "Protocol" if you want to use an external player.
+						<br><br>
+						<u>Media</u> (Auto, MP4, VLC etc.)
+						<br>
+						Select which type of media or plugin to use when embeding the video. Choose "Auto" so the video is embedded using its own media/mime type, choose other option for embedding the video with a different media type or with a plugin.
+						<br><br>
+						<u>Definition</u> (SD, HD etc.)
+						<br>
+						Select the default (highest) video definition.
+						<br><br>
+						<u>Container</u> (MP4, WebM etc.)
+						<br>
+						Select the default video container.
+						<br><br>
+						<u>Open Page Link</u>
+						<br>
+						Enable/disable auto selection of the page link as the default option in the videos menu. This can be used with a plugin or an external application. With this option enabled the video page link is passed to the plugin or the external application which gets and plays the video stream. The plugins that support this are MPV (mozplugger + mpv + youtube-dl) and VLC.
+						<br><br>
+						<u>Autoplay</u>
+						<br>
+						Enable/disable video autoplay. If it's on the video starts to play when the video page is loaded or when a new video format is selected. If it's off a video thumbnail is shown.
+						<br><br>
+						<u>Play DASH</u>
+						<br>
+						Enable/disable DASH streams (video with audio) playback. Available options are "Video", "Embed+VLC" and "Protocol". The default option is "Video". Select "Embed" and "VLC" or "VLC*" in the embed and media menus to use VLC instead. Select "Protocol" in the embed menu to use an external player. This is experimental and it may not work as expected.
+
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/tux.png" alt="Linux" title="Linux">
+				</div>
+				<div class="content_text">
+					<div>
+						On Linux and BSD platforms the options for video playback are:
+						<br>
+						<br>1. the browser video player (HTML5)
+						<br>
+						<br>2. video plugins (NPAPI): VLC, Gecko-mediaplayer, Totem (Gnome Videos), Mozplugger
+						<br>
+						<br>3. external video player through a protocol
+						<br>
+						<br>3.1 Create the viewtube script, <i>bash</i> example using <i>mpv</i> or <i>vlc</i> for video playback
+						<br>
+						<br><i>viewtube.sh</i>
+						<br>
+						<div class="code">
+							#! /bin/bash
+							<br>
+							<br>i="$(echo "$1" | sed -e "s/viewtube://" -e "s/SEPARATOR/|/g")"
+							<br>v="$(echo "$i" | cut -d "|" -f 1)"
+							<br>a="$(echo "$i" | cut -d "|" -f 2)"
+							<br>s="$(echo "$i" | cut -d "|" -f 3)"
+							<br>if [ "$a" = "" ]; then
+							<br>&nbsp;&nbsp;&nbsp;if [ "$s" = "" ]; then
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mpv --osc --fs "$v" || cvlc -f "$v"
+							<br>&nbsp;&nbsp;&nbsp;else
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mpv --osc --fs --sub-file="$s" "$v" || cvlc -f --sub-file="$s" "$v"
+							<br>&nbsp;&nbsp;&nbsp;fi
+							<br>else
+							<br>&nbsp;&nbsp;&nbsp;if [ "$s" = "" ]; then
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mpv --osc --fs --audio-file="$a" "$v" || cvlc -f --input-slave="$a" "$v"
+							<br>&nbsp;&nbsp;&nbsp;else
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mpv --osc --fs --sub-file="$s" --audio-file="$a" "$v" || cvlc -f --sub-file="$s" --input-slave="$a" "$v"
+							<br>&nbsp;&nbsp;&nbsp;fi
+							<br>fi
+						</div>
+						<br>
+						<br>3.2 Create the viewtube protocol file in ~/.local/share/applications
+						<br>
+						<br><i>viewtube.desktop</i>
+						<br>
+						<div class="code">
+							[Desktop Entry]
+							<br>Name=ViewTube Protocol
+							<br>Exec=/path/to/viewtube.sh %u
+							<br>Type=Application
+							<br>Terminal=false
+							<br>MimeType=x-scheme-handler/viewtube
+						</div>
+						<br>
+						<br>Enable protocol:
+						<br><div class="code">
+							xdg-mime default viewtube.desktop x-scheme-handler/viewtube
+						</div>
+						<br>
+						<br>Test:
+						<br><div class="code">
+							xdg-open viewtube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+						</div>
+						<br>
+						<br>3.3 Activate the protocol
+						<br>
+						<br><a href="viewtube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Click here to associate the script to the protocol</a>
+						<br>
+						<br>3.4 Select 'Protocol' in the embed menu from the options window
+						<br>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/windows.png" alt="Windows" title="Windows">
+				</div>
+				<div class="content_text">
+					<div>
+						On Windows platform the options for video playback are:
+						<br>
+						<br>1. the browser video player (HTML5)
+						<br>
+						<br>2. video plugins (NPAPI): Windows Media Player, Quicktime and VLC
+						<br>
+						<br>3. external video player through a protocol
+						<br>
+						<br>3.1 Create the viewtube script, <i>batch</i> example using <i>vlc</i> for video playback
+						<br>
+						<br><i>viewtube.bat</i>
+						<br>
+						<div class="code">
+							@echo off
+							<br>setlocal
+							<br>
+							<br>set "i=%~1"
+							<br>set "i=%i:viewtube:=%"
+							<br>set "i=%i:SEPARATOR=|%"
+							<br>set "i=%i:||=| |%"
+							<br>for /f "tokens=1,2,3 delims=|" %%a in ("%i%") do (
+							<br>&nbsp;&nbsp;&nbsp;set "v=%%a"
+							<br>&nbsp;&nbsp;&nbsp;set "a=%%b"
+							<br>&nbsp;&nbsp;&nbsp;set "s=%%c"
+							<br>)
+							<br>if "%a%"==" " set "a="
+							<br>if "%a%"=="" (
+							<br>&nbsp;&nbsp;&nbsp;if "%s%"=="" (
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\VideoLAN\VLC\vlc.exe" "%v%"
+							<br>&nbsp;&nbsp;&nbsp;) else (
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\VideoLAN\VLC\vlc.exe" --sub-file="%s%" "%v%"
+							<br>&nbsp;&nbsp;&nbsp;)
+							<br>) else (
+							<br>&nbsp;&nbsp;&nbsp;if "%s%"=="" (
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\VideoLAN\VLC\vlc.exe" --input-slave="%a%" "%v%"
+							<br>&nbsp;&nbsp;&nbsp;) else (
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\VideoLAN\VLC\vlc.exe" --sub-file="%s%" --input-slave="%a%" "%v%"
+							<br>&nbsp;&nbsp;&nbsp;)
+							<br>)
+						</div>
+						<br>
+						<br>3.2 Create the viewtube registry file, change the script path and execute it
+						<br>
+						<br><i>viewtube.reg</i>
+						<br>
+						<div class="code">
+							REGEDIT4
+							<br>
+							<br>[HKEY_CLASSES_ROOT\viewtube]
+							<br>@="URL:viewtube Protocol"
+							<br>"URL Protocol"=""
+							<br>
+							<br>[HKEY_CLASSES_ROOT\viewtube\shell]
+							<br>
+							<br>[HKEY_CLASSES_ROOT\viewtube\shell\open]
+							<br>
+							<br>[HKEY_CLASSES_ROOT\viewtube\shell\open\command]
+							<br>@="\"D:\\Scripts\\viewtube.bat\" \"%1\""
+						</div>
+						<br>
+						<br>3.3 Activate the protocol
+						<br>
+						<br><a href="viewtube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Click here to associate the script to the protocol</a>
+						<br>
+						<br>3.4 Select 'Protocol' in the embed menu from the options window
+						<br>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/mac.png" alt="Mac" title="Mac">
+				</div>
+				<div class="content_text">
+					<div>
+						On Mac platform the options for video playback are:
+						<br>
+						<br>1. the browser video player (HTML5)
+						<br>
+						<br>2. video plugins (NPAPI): Quicktime and VLC
+						<br>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+		</div>
+
+	</body>
+
+</html>
