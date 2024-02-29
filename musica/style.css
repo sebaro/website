@@ -1,0 +1,282 @@
+
+body {
+	margin: 0px;
+	background-color: #F5F5F5;
+	font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr {
+	width: 1000px;
+	border: 0px;
+	height: 1px;
+	margin: 20px auto 20px auto;
+	background-color: #DDDDDD;
+	background-image: linear-gradient(to right, #EEE, #DDD, #EEE);
+}
+
+.arrow {
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 30px;
+	border: 2px solid #EEEEEE;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: bottom;
+	position: fixed;
+	bottom: 12%;
+	right: 10px;
+	background-color: #FFFFFF;
+}
+
+.arrow:hover {
+	background-color: #EEEEEE;
+}
+
+.question {
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid #EEEEEE;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	vertical-align: bottom;
+	position: fixed;
+	bottom: 5%;
+	right: 10px;
+	background-color: #FFFFFF;
+}
+
+.question:hover {
+	background-color: #EEEEEE;
+}
+
+.artist_list {
+	max-width: 1100px;
+	margin: 20px auto;
+	background-color: #FFFFFF;
+	text-align: center;
+	padding: 30px 10px;
+	border: 1px solid #E1E1E1;
+}
+
+.artist_box {
+	display: inline-block;
+	border: 2px solid #EEEEEE;
+	background-color: #FFFFFF;
+	text-align: center;
+	margin: 10px;
+}
+
+.artist_box:hover {
+	border: 2px solid #FFA500;
+	cursor: pointer;
+}
+
+.artist_image {
+	border: 0px;
+}
+
+.artist_name {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Arial,Helvetica,sans-serif;
+	text-shadow: 0px 2px 0px #EEEEEE;
+	padding: 10px 0px 10px 0px;
+	color: #777777;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.artist_content {
+	max-width: 1100px;
+	margin: 0px auto;
+	text-align: center;
+	padding: 20px;
+	background-color: #FFFFFF;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.artist_cover {
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	vertical-align: top;
+	margin-top: 7px;
+	border-radius: 0px;
+}
+
+.artist_text {
+	width: 485px;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px;
+	text-align: justify;
+	font-size: 15px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #555555;
+	text-shadow: 0px 1px 0px #EEEEEE;
+}
+
+.album_list {
+	max-width: 1040px;
+	background-color: #F5F5F5;
+	margin: 10px auto;
+	padding: 10px 60px 10px 60px;
+	vertical-align: middle;
+	text-align: justify;
+}
+
+.album_box {
+	display: inline-block;
+	border: 2px solid #EEEEEE;
+	width: 180px;
+	background-color: #FFFFFF;
+	text-align: center;
+	margin: 10px;
+}
+
+.album_box:hover {
+	border: 2px solid #FFA500;
+	cursor: pointer;
+}
+
+.album_image {
+	width: 180px;
+	height: 180px;
+	border: 0px;
+	vertical-align: top;
+}
+
+.album_title {
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Arial,Helvetica,sans-serif;
+	text-shadow: 0px 1px 0px #EEEEEE;
+	padding: 10px 0px 10px 0px;
+	color: #777777;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.album_content {
+	min-height: 500px;
+	max-width: 1100px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	text-align:center;
+}
+
+.album_cover {
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	width: 500px;
+	height: 500px;
+	padding: 0px;
+}
+
+.album_text {
+	display: inline-block;
+	min-height: 500px;
+	width: 500px;
+	vertical-align: top;
+	text-align: justify;
+	padding: 5px;
+	font-size: 15px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #555555;
+	text-shadow: 0px 1px 0px #EEEEEE;
+}
+
+.album_disc {
+	font-size: 12px;
+	font-weight: bold;
+	color: #24486C;
+	padding-top: 5px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.album_track {
+	color: #24486C;
+	padding-top: 5px;
+	padding-left: 20px;
+	text-align: left;
+}
+
+.album_track_alt {
+	color: #24486C;
+	padding-top: 5px;
+	padding-left: 40px;
+	text-align: left;
+}
+
+.album_track_obs {
+	font-size: 13px;
+	color: #555555;
+	padding-left: 40px;
+	padding-top: 3px;
+	text-align: left;
+}
+
+.album_credits {
+	width: 90px;
+	display: inline-block;
+	font-size: smaller;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.album_personnel {
+	width: 380px;
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+}
+
+.album_credits_obs {
+	font-size: 13px;
+	display: inline-block;
+	color: #555555;
+	padding-left: 20px;
+	padding-top: 3px;
+	text-align: left;
+	width: 100%;
+}
+
+.album_releases {
+	font-size: 12px;
+	color: #24486C;
+	text-align: left;
+}
+
+.album_formats {
+	width: 120px;
+	font-size: 12px;
+	display: inline-block;
+	color: #777777;
+	text-align: left;
+	vertical-align: top;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.album_labels {
+	width: 330px;
+	display: inline-block;
+	vertical-align: top;
+}
