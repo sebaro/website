@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<title>by sebaro ~ SaveTube</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+
+		<link type="image/png" rel="icon" href="favicon.png">
+		<link type="text/css" rel="stylesheet" href="style.css">
+
+	</head>
+
+	<body>
+
+		<div class="header">
+			<div class="head">
+				<div class="logo"><img src="logo.png" alt="SaveTube" title="SaveTube"></div>
+				<div class="top">
+					<a class="top_entry" href="files/savetube.user.js"><img src="images/download.png" alt="SaveTube" title="SaveTube"> SaveTube</a>
+					<a class="top_entry" href="files/savetubeplus.user.js"><img src="images/download.png" alt="SaveTube+" title="SaveTube+"> SaveTube+</a>
+					<a class="top_entry" href="https://gitlab.com/sebaro/SaveTube"><img src="images/gitlab.png" alt="SaveTube @ GitLab" title="SaveTube @ GitLab"></a>
+					<a class="top_entry" href="https://github.com/sebaro/SaveTube"><img src="images/github.png" alt="SaveTube @ GitHub" title="SaveTube @ GitHub"></a>
+					<a class="top_entry" href="http://sebaro.pro/contact"><img src="images/question.png" alt="SaveTube Contact" title="SaveTube Contact"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="screen"></div>
+
+		<div class="info">
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/info.png" alt="About" title="About">
+				</div>
+				<div class="content_text">
+					<div>
+						SaveTube is a JavaScript application that allows downloading videos from video sharing web sites by adding on the bottom right of the page window a menu with all formats and definitions of the video. Below are all supported sites. There is an extra script that gets all video streams from an web page.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/video.png" alt="Sites" title="Sites">
+				</div>
+				<div class="content_text">
+					<img src="images/sites.png" alt="The main video sharing web sites on which you can watch videos using SaveTube." title="The main video sharing web sites on which you can watch videos using SaveTube.">
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/usage.png" alt="Installation" title="Installation">
+				</div>
+				<div class="content_text">
+					<div>
+						<b>Installation</b>
+						<br>
+						Read the following information on how to install the script in different browsers.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/firefox.png" alt="Firefox" title="Firefox">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Firefox based browsers the script has to be installed with one of Greasemonkey, Tampermonkey or Violentmonkey add-ons from <a href='https://addons.mozilla.org'>Mozilla Add-ons</a>. Or install the SaveTube add-on from <a href="https://addons.mozilla.org/en-US/firefox/addon/savetube">Mozilla Add-ons</a> or manually download and install it from <a href="files/savetube.xpi">here</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/chromium.png" alt="Chromium" title="Chromium">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Chromium based browsers the script has to be downloaded then dragged and dropped in the extensions page or installed with the Tampermonkey or Violentmonkey extension from <a href="https://chrome.google.com/webstore">Chrome Web Store</a>. Or manually download and install the SaveTube extension from <a href="files/savetube.crx">here</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/epiphany.png" alt="Epiphany" title="Epiphany">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Epiphany (Gnome Web) it is required to install the Greasemonkey extension from Epiphany extensions.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/midori.png" alt="Midori" title="Midori">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Midori it is required to enable the User Addons extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/falkon.png" alt="Falkon" title="Falkon">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Falkon (QupZilla) it is required to enable the GreaseMonkey extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/opera.png" alt="Opera" title="Opera">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Opera the script has to be downloaded then dragged and dropped in the extensions page or installed with extensions, Tampermonkey from <a href="https://addons.opera.com">Opera Add-ons</a> or <a href="https://violentmonkey.github.io/get-it/">Violentmonkey</a>. Or manually download and install the SaveTube extension from <a href="files/savetube.crx">here</a>. For versions older than 15 download and save the script in the JavaScript files directory and enable "User JavaScript on HTTPS" in "opera:config" or use the Violentmonkey extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/maxthon.png" alt="Maxthon" title="Maxthon">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Maxthon it is require to install the <a href="http://extension.maxthon.com/detail/index.php?view_id=2816">SaveTube</a> extension or to install the script in the <a href='http://extension.maxthon.com/detail/index.php?view_id=1680'>Violentmonkey</a> extension.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/safari.png" alt="Safari" title="Safari">
+				</div>
+				<div class="content_text">
+					<div>
+						To work in Safari it is required to install one of <a href='http://safariaddons.com/en-US/safari/addon/43'>GreaseKit</a>, <a href='http://d.hatena.ne.jp/os0x/20100612/1276330696'>NinjaKit</a> or <a href="https://tampermonkey.net/?browser=safari">Tampermonkey</a>.
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/usage.png" alt="Usage" title="Usage">
+				</div>
+				<div class="content_text">
+					<div>
+						<b>Usage</b>
+						<br>
+						Read the following information on how to use the script.
+						<br><br><br>
+						Select the video from the menu or use the options window to select the preferred video definition and container.
+						<br><br>
+						<div class="download"></div><div class="downloading"></div><div class="download_link">[Link]</div><i><b>Download</b></i>
+						<br>
+						Click this button to save the video stream. The script will try to download the video directly when the browser supports this feature. The second icon is shown while downloading. If the browser doesn't support direct download the script will show a link. Click "Link" and the browser will show the open popup window. Some browsers don't have this feature and will open/play the video, for these right click (two-button mouse) or control and click (single-button mouse) 'Link' and 'Save link as'.
+						<br><br>
+						<i>DASH</i>
+						<br>
+						Some sites use DASH streams, which are audio only and video only. These are shown in the videos menu as "Video Only" and "Audio Only". Download both streams and use an external tool to multiplex them. This can be made automatic, enable DASH download support in the options window and the videos menu will show new videos as "Video With Audio". You can download these using a browser protocol and an external script, read below for more details.
+						<br><br>
+						<i>HLS</i>
+						<br>
+						Some sites use HLS streams, which breaks the stream into a sequence of small chunks. These are shown in the videos menu as "HLS". You can download these using a browser protocol and an external script, read below for more details.
+						<br><br><br>
+						<div class="options"></div><i><b>Options</b></i>
+						<br>
+						Click the vertical dots to open the options window.
+						<br><br>
+						<u>Definition</u> (SD, HD etc.)
+						<br>
+						Select the default (highest) video definition.
+						<br><br>
+						<u>Container</u> (MP4, WebM etc.)
+						<br>
+						Select the default video container.
+						<br><br>
+						<u>Open Page Link</u>
+						<br>
+						Enable/disable auto selection of the page link as the default option in the videos menu. This requires a browser protocol. With this option enabled only the page link is sent to the external application which gets and downloads the streams.
+						<br><br>
+						<u>Autosave</u>
+						<br>
+						Enable/disable video auto-download. If it's on the video download will start when the video page is loaded or when a new video format is selected. This works for "High Definition MP4" YouTube videos or if the browser supports direct download.
+						<br><br>
+						<u>Show Save Link</u>
+						<br>
+						Enable/disable showing the stream link when clicking the download button. When it's on the direct download is disabled.
+						<br><br>
+						<u>Save DASH</u>
+						<br>
+						Enable/disable DASH streams (video with audio) download. This requires a browser protocol and an external application for muxing the audio and video streams
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/tux.png" alt="Linux" title="Linux">
+				</div>
+				<div class="content_text">
+					<div>
+						How to download DASH, HLS or any video on Linux and BSD platforms:
+						<br>
+						<br>1 Create the savetube script, <i>bash</i> example using <i>ffmpeg</i> for HLS and DASH (audio and video streams multiplexing) or youtube-dl for downloading any video
+						<br>
+						<br><i>savetube.sh</i>
+						<br>
+						<div class="code">
+							#! /bin/bash
+							<br>
+							<br>d="/home/Video/YouTube"
+							<br>i="$(echo "$1" | sed -e "s/savetube://" -e "s/SEPARATOR/|/g")"
+							<br>t="$(echo "$i" | cut -d "|" -f 1 | sed -e "s/%20/ /g" -e "s/ +$//" -e "s/^ +//")"
+							<br>v="$(echo "$i" | cut -d "|" -f 2)"
+							<br>a="$(echo "$i" | cut -d "|" -f 3)"
+							<br>f="$(echo "$v" | grep -qi "video/webm\|\.webm" && echo "webm" || echo "mp4")"
+							<br>if [ "$a" = "" ]; then
+								<br>&nbsp;&nbsp;&nbsp;if echo "$v" | grep -qi "\.m3u8"; then
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ffmpeg -y -i "$v" -c copy "$d/$t.$f"
+								<br>&nbsp;&nbsp;&nbsp;else
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;youtube-dl "$v" -o "$d/$t"
+								<br>&nbsp;&nbsp;&nbsp;fi
+							<br>else
+								<br>&nbsp;&nbsp;&nbsp;ffmpeg -y -i "$v" -i "$a" -c copy "$d/$t.$f"
+							<br>fi
+						</div>
+						<br>
+						<br>2 Create the savetube protocol file in ~/.local/share/applications
+						<br>
+						<br><i>savetube.desktop</i>
+						<br>
+						<div class="code">
+							[Desktop Entry]
+							<br>Name=SaveTube Protocol
+							<br>Exec=/path/to/savetube.sh %u
+							<br>Type=Application
+							<br>Terminal=false
+							<br>MimeType=x-scheme-handler/savetube
+						</div>
+						<br>
+						<br>Enable protocol:
+						<br><div class="code">
+							xdg-mime default savetube.desktop x-scheme-handler/savetube
+						</div>
+						<br>
+						<br>Test:
+						<br><div class="code">
+							xdg-open savetube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+						</div>
+						<br>
+						<br>3 Activate the protocol
+						<br>
+						<br><a href="savetube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Click here to associate the script to the protocol</a>
+						<br>
+						<br>3.4 Enable DASH download support in the options window
+						<br>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+			<div class="content">
+				<div class="content_image">
+					<img src="images/windows.png" alt="Windows" title="Windows">
+				</div>
+				<div class="content_text">
+					<div>
+						How to download DASH, HLS or any video on Windows:
+						<br>
+						<br>1 Create the savetube script, <i>batch</i> example using <i>ffmpeg</i> for HLS and DASH (audio and video streams multiplexing) or youtube-dl for downloading any video
+						<br>
+						<br><i>savetube.bat</i>
+						<br>
+						<div class="code">
+							@echo off
+							<br>setlocal
+							<br>
+							<br>set "d=D:\Videos"
+							<br>set "i=%~1"
+							<br>set "i=%i:savetube:=%"
+							<br>set "i=%i:SEPARATOR=|%"
+							<br>for /f "tokens=1,2,3 delims=|" %%a in ("%i%") do (
+								<br>&nbsp;&nbsp;&nbsp;set "t=%%a"
+								<br>&nbsp;&nbsp;&nbsp;set "v=%%b"
+								<br>&nbsp;&nbsp;&nbsp;set "a=%%c"
+							<br>)
+							<br>set "f=mp4"
+							<br>if not "x%v:video/webm=%"=="x%v%" set "f=webm"
+							<br>if not "x%v:.webm=%"=="x%v%" set "f=webm"
+							<br>if "%a%"=="" (
+								<br>&nbsp;&nbsp;&nbsp;if not "%v:.m3u8=%"=="%v%" (
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\ffmpeg\bin\ffmpeg.exe" -i "%v%" -c copy "%d%\%t%.%f%"
+								<br>&nbsp;&nbsp;&nbsp;) else (
+								<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"C:\Program Files\ytdl\youtube-dl.exe "%v%" -o "%d%\%t%"
+								<br>&nbsp;&nbsp;&nbsp;)
+							<br>) else (
+								<br>&nbsp;&nbsp;&nbsp;"C:\Program Files\ffmpeg\bin\ffmpeg.exe" -i "%v%" -i "%a%" -c copy "%d%\%t%.%f%"
+							<br>)
+						</div>
+						<br>
+						<br>3.2 Create the savetube registry file, change the script path and execute it
+						<br>
+						<br><i>savetube.reg</i>
+						<br>
+						<div class="code">
+							REGEDIT4
+							<br>
+							<br>[HKEY_CLASSES_ROOT\savetube]
+							<br>@="URL:savetube Protocol"
+							<br>"URL Protocol"=""
+							<br>
+							<br>[HKEY_CLASSES_ROOT\savetube\shell]
+							<br>
+							<br>[HKEY_CLASSES_ROOT\savetube\shell\open]
+							<br>
+							<br>[HKEY_CLASSES_ROOT\savetube\shell\open\command]
+							<br>@="\"D:\\Scripts\\savetube.bat\" \"%1\""
+						</div>
+						<br>
+						<br>3.3 Activate the protocol
+						<br>
+						<br><a href="savetube:http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Click here to associate the script to the protocol</a>
+						<br>
+						<br>3.4 Enable DASH download support in the options window
+						<br>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+
+			<br class="clear">
+			<br class="clear">
+
+		</div>
+
+	</body>
+
+</html>

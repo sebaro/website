@@ -1,0 +1,121 @@
+
+body {
+	font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+	background-color: #FFFFFF;
+	margin: 0px auto;
+}
+
+.logo {
+	font-size: 50px;
+	font-style: italic;
+	max-width: 1000px;
+	margin: 0px auto;
+	text-align: left;
+	padding-left: 120px;
+	padding-top: 50px;
+	color: #000000;
+	letter-spacing: 5px;
+}
+
+.arrow {
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 30px;
+	border: 2px solid #EEEEEE;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: bottom;
+	position: fixed;
+	top: 46%;
+	right: 15px;
+}
+
+.arrow:hover {
+	background-color: #EEEEEE;
+}
+
+.question {
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid #EEEEEE;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	vertical-align: bottom;
+	position: fixed;
+	top: 54%;
+	right: 15px;
+}
+
+.question:hover {
+	background-color: #EEEEEE;
+}
+
+.index {
+	font-size: 20px;
+	max-width: 1000px;
+	margin: 50px auto;
+	text-align: left;
+	padding-right: 30px;
+}
+
+.index div {
+	padding: 5px 30px 5px 20px;
+	margin-left: 40px;
+	color: #000000;
+	border-left: 1px solid #DDDDDD;
+	border-radius: 10px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.index a {
+	text-decoration: none;
+	color: #555555;
+}
+
+.index a:hover {
+	color: #000000;
+}
+
+.fragment {
+	max-width: 1000px;
+	margin: 100px auto;
+	text-align: left;
+}
+
+.title {
+	color: #000000;
+	font-size: 30px;
+	padding: 20px 60px 0px 70px;
+}
+
+.subtitle {
+	color: #555555;
+	font-size: 16px;
+	font-style: italic;
+	padding-left: 70px;
+	padding-right: 60px;
+	white-space: pre-line;
+}
+
+blockquote {
+	color: #333333;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	margin-top: 30px;
+	line-height: 1.5;
+	border-left: 1px solid #CCCCCC;
+	border-radius: 10px;
+	padding: 0px 30px 30px 30px;
+	text-align: justify;
+	white-space: pre-line;
+}

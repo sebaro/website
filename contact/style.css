@@ -1,0 +1,231 @@
+
+body {
+  margin: 0 auto;
+  color: #666666;
+  background-color: #FFFFFF;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 14px;
+}
+
+.header {
+  width: 100%;
+  height: 110px;
+  background-color: #FFFFFF;
+  position: fixed;
+  border-bottom: 1px solid #EEEEEE;
+  z-index: 1;
+}
+
+.head {
+  margin: 10px auto;
+  width: 1000px;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  background-color: #F1F1F1;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+.logo img {
+  border: 0px;
+  margin-top: 10px;
+}
+
+.top {
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+
+.formbox {
+  background-color: #F1F1F1;
+  text-align: center;
+}
+
+.mform {
+  margin: 140px auto 20px auto;
+  display: inline-block;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  background-color: #F1F1F1;
+  padding: 10px;
+}
+
+.input {
+  color: #387154;
+  background-color: #FCFCFC;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  display: block;
+  margin: 5px;
+  width: 700px;
+  height: 24px;
+  padding: 10px;
+}
+
+textarea {
+  color: #387154;
+  background-color: #FCFCFC;
+  font-weight: bold;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  margin: 5px;
+  width: 700px;
+  height: 150px;
+  padding: 10px;
+  resize: none;
+}
+
+.submit {
+  display: block;
+  width: 722px;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+  margin: 5px;
+  color: #FFFFFF;
+  background-color: #7FBF4D;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error {
+  display: none;
+  color: #AA0000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.messages {
+  width: 100%;
+  background-color: #FFFFFF;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.entry {
+  display: inline-block;
+  text-align: justify;
+  width: 800px;
+  padding: 10px;
+  text-shadow: 1px 0px 0px #FFFFFF;
+  font-size: 16px;
+  color: #444444;
+  margin-top: 50px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+}
+
+.rentry {
+  display: inline-block;
+  text-align: justify;
+  width: 700px;
+  padding: 10px;
+  text-shadow: 1px 0px 0px #FFFFFF;
+  font-size: 16px;
+  color: #444444;
+  margin-top: 20px;
+  margin-left: 100px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+}
+
+.subject {
+  color: #B57900;
+  font-size: 20px;
+  font-size: bold;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 0px #DDDDDD;
+}
+
+.author {
+  color: #325E9D;
+  font-size: 18px;
+  font-size: bold;
+}
+
+.authori {
+  color: #779E34;
+  font-size: 18px;
+}
+
+.date {
+  color: #999999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333333;
+  text-shadow: 0px 1px 0px #EEEEEE;
+  line-height: 1.20;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.rbox {
+  display: inline-block;
+  text-align: right;
+  width: 800px;
+}
+
+.rbutton {
+  display: inline-block;
+  width: 70px;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+  margin: 10px;
+  color: #FFFFFF;
+  background-color: #7FBF4D;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.warn {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.warne {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  color: #AA0000;
+}
+
+a {
+  color: #336699;
+  text-decoration: none;
+  text-shadow: 1px 0px 0px #DDDDDD;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+a:hover {
+  color: #999999;
+  text-decoration: none;
+}
+
+a img {
+  border: 0px;
+}
