@@ -11,7 +11,7 @@ function create(type, properties, event, listener) {
 }
 
 function request(post) {
-	var url = 'https://sebaro-contact.vercel.app/api';
+	var url = 'https://sebaro-apps.vercel.app/contact';
 	var xhr = new XMLHttpRequest();
 	var method = 'GET';
 	if (post) {
