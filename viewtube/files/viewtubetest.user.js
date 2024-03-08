@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            ViewTube
-// @version         2024.02.20
+// @version         2024.03.02
 // @description     Watch videos from video sharing websites with extra options.
 // @author          sebaro
 // @namespace       http://sebaro.pro/viewtube
@@ -1932,7 +1932,7 @@ function ViewTube() {
 		/* Player Size */
 		var dmPlayerWidth, dmPlayerHeight;
 		function dmSizes() {
-			if (dmPlayerWindow) dmPlayerWidth = dmPlayerWindow.clientWidth;
+			if (dmPlayerWindow) dmPlayerWidth = dmPlayerWindow.clientWidth - 60;
 			if (dmPlayerWidth) dmPlayerHeight = Math.ceil(dmPlayerWidth / (16 / 9)) + myPlayerPanelHeight;
 		}
 
@@ -1961,17 +1961,9 @@ function ViewTube() {
 				cleanMyElement(myPlayerWindow, false);
 				cleanMyElement(dmPlayerWindow, true);
 				appendMyElement(dmPlayerWindow, myPlayerWindow);
-				//blockObject = dmPlayerWindow;
-				dmPlayerFrame = getMyElement(dmPlayerWindow.firstChild, 'iframe', 'tag', '', 0, false);
-				if (dmPlayerFrame) {
-					dmPlayerFrame.addEventListener('load', function() {
-						//dmPlayerFrame.src = '#';
-						blockObject = dmPlayerFrame.contentWindow.document;
-					}, false);
-				}
 				dmSizes();
 				styleMyElement(myPlayerWindow, {position: 'relative', width: dmPlayerWidth + 'px', height: dmPlayerHeight + 'px', textAlign: 'center'});
-				styleMyElement(dmPlayerWindow, {marginTop: '-15px'})
+				styleMyElement(dmPlayerWindow, {height: dmPlayerHeight + 'px', textAlign: 'center', marginLeft: '30px'})
 				if (dmVideosReady) dmPlayer();
 			}
 			dmWaitForLoops--;
@@ -1984,6 +1976,11 @@ function ViewTube() {
 			if (dmAdsRight && dmAdsRight.parentNode) styleMyElement(dmAdsRight, {width: '0px'});
 		}, 1000);
 		intervals.push(dmWaitForObject);
+		page.win.setTimeout(function() {
+			dmSizes();
+			blockObject = dmPlayerWindow;
+			blockVideos();
+		}, 5000);
 
 		/* Create Player */
 		var dmDefaultVideo = 'Low Definition MP4';
