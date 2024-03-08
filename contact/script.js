@@ -72,7 +72,7 @@ function show() {
 				mstyle = (data[j]['author'] == 'sebaro') ? "authori" : "author";
 				mauthor = create('div', {className: mstyle, textContent: data[j]['author']});
 				mcontent = data[j]['message'];
-				if (mcontent) mcontent = mcontent.replace(/(https?:\/\/([-\w\.]+[-\w])+(:\d+)?(\/([\w/_\.#-\@~]*(\?\S+)?[^\.,\s\)])?)?)/, '<a href="$1">$1</a>');
+				if (mcontent) mcontent = mcontent.replace(/(https?:\/\/([-\w\.]+[-\w])+(:\d+)?(\/([\w/_\.#-\@~]*(\?\S+)?[^\.,\s\)])?)?)/g, '<a href="$1">$1</a>');
 				mcontent = create('div', {className: 'message', innerHTML: mcontent});
 				mdate = create('div', {className: 'date', textContent: data[j]['date']});
 				nl = create('br');

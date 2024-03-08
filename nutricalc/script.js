@@ -49,6 +49,7 @@ function dom(object, type, properties, parent, event, listener) {
 function request(query, callback) {
   console.log(query);
   var url = 'https://sebaro-apps.vercel.app/api/nutricalc';
+  //var url = './api/php/index.php';
   var xhr = new XMLHttpRequest();
   xhr.open('POST', url, true);
   xhr.onload = function(e) {
