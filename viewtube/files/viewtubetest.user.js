@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            ViewTube
-// @version         2024.03.02
+// @version         2024.03.14
 // @description     Watch videos from video sharing websites with extra options.
 // @author          sebaro
 // @namespace       http://sebaro.pro/viewtube
@@ -1351,7 +1351,7 @@ function ViewTube() {
 		var ytVideosContent = {};
 		var ytVideoInfoKey = 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
 		var ytVideoInfoUrl = page.win.location.protocol + '//' + page.win.location.hostname + '/youtubei/v1/player?prettyPrint=false&key=';
-		var ytVideoInfoClientVersion = {'WEB': '2.11111111', 'WEB_EMBEDDED_PLAYER': '1.11111111', 'ANDROID': '17.31.35', 'TVHTML5_SIMPLY_EMBEDDED_PLAYER': '2.0'};
+		var ytVideoInfoClientVersion = {'WEB': '2.11111111', 'WEB_EMBEDDED_PLAYER': '1.11111111', 'ANDROID': '19.09.37', 'TVHTML5_SIMPLY_EMBEDDED_PLAYER': '2.0'};
 		var ytVideoSignatureTimestamp = 19173;
 		var ytVideoInfoDataRequest = {};
 		function ytGetVideos(api, client, embed) {
@@ -1719,7 +1719,7 @@ function ViewTube() {
 		var ytVideosContent = {};
 		var ytVideoInfoKey = 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8';
 		var ytVideoInfoUrl = page.win.location.protocol + '//' + page.win.location.hostname + '/youtubei/v1/player?prettyPrint=false&key=';
-		var ytVideoInfoClientVersion = {'WEB': '2.11111111', 'WEB_EMBEDDED_PLAYER': '1.11111111', 'ANDROID': '17.31.35', 'TVHTML5_SIMPLY_EMBEDDED_PLAYER': '2.0'};
+		var ytVideoInfoClientVersion = {'WEB': '2.11111111', 'WEB_EMBEDDED_PLAYER': '1.11111111', 'ANDROID': '19.09.37', 'TVHTML5_SIMPLY_EMBEDDED_PLAYER': '2.0'};
 		var ytVideoSignatureTimestamp = 19173;
 		var ytVideoInfoDataRequest = {};
 		function ytGetVideos(api, client, embed) {
