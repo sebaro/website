@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            ViewTube+
-// @version         2024.02.14
+// @version         2024.06.09
 // @description     Watch videos from video sharing websites without Flash Player.
 // @author          sebaro
 // @namespace       http://sebaro.pro/viewtube
@@ -1631,165 +1631,169 @@ function ViewTube() {
 
 	else if (page.url.indexOf('areena.yle.fi/') != -1) {
 
-		/* Page Type */
-		var ylePageType = getMyContentOld(page.url, 'meta\\s+property="og:type"\\s+content="(.*?)"', false);
-		if (!ylePageType || (ylePageType != 'video.episode' && ylePageType != 'video.other' && ylePageType != 'video.movie')) return;
+		page.win.setTimeout(function() {
 
-		/* Get Player Window */
-		var ylePlayerWindow = getMyElement('', 'div', 'query', '[class*="HeaderPlayControls_root"]', -1, false);
-		if (!ylePlayerWindow) {
-			showMyMessage('!player');
-			return;
-		}
-		var ylePlayerImage = getMyElement('', 'div', 'query', '[class*="HeaderImage_wrapper"]', -1, false);
-		if (ylePlayerImage) styleMyElement(ylePlayerImage, {display: 'none'});
+			/* Page Type */
+			var ylePageType = getMyContent(page.url, 'meta\\s+property="og:type"\\s+content="(.*?)"');
+			if (!ylePageType || (ylePageType != 'video.episode' && ylePageType != 'video.other' && ylePageType != 'video.movie')) return;
 
-		/* Player Sizes */
-		var ylePlayerWidth, ylePlayerHeight;
-		function yleSizes() {
-			if (ylePlayerWindow) ylePlayerWidth = ylePlayerWindow.clientWidth * 2;
-			if (ylePlayerWidth) ylePlayerHeight = Math.ceil(ylePlayerWidth / (16 / 9)) + myPlayerPanelHeight;
-		}
-
-		/* Resize Event */
-		page.win.addEventListener('resize', function() {
-			yleSizes();
-			if (player) {
-				player['playerWidth'] = ylePlayerWidth;
-				player['playerHeight'] = ylePlayerHeight;
-				resizeMyPlayer('widesize');
+			/* Get Player Window */
+			var ylePlayerWindow = getMyElement('', 'div', 'query', '[class*="HeaderPlayControls_root"]', -1, false);
+			if (!ylePlayerWindow) {
+				showMyMessage('!player');
+				return;
 			}
-		}, false);
-		yleSizes();
+			var ylePlayerImage = getMyElement('', 'div', 'query', '[class*="HeaderImage_wrapper"]', -1, false);
+			if (ylePlayerImage) styleMyElement(ylePlayerImage, {display: 'none'});
 
-		/* Get Video Thumb */
-		var yleVideoThumb = getMyContentOld(page.url, 'meta\\s+property="og:image"\\s+content="(.*?)"', false);
-		if (!yleVideoThumb) yleVideoThumb = getMyContentOld(page.url, 'meta\\s+property="og:image:url"\\s+content="(.*?)"', false);
-		if (!yleVideoThumb) yleVideoThumb = getMyContentOld(page.url, 'imagesrcset="([^"]*?) 640', false);
+			/* Player Sizes */
+			var ylePlayerWidth, ylePlayerHeight;
+			function yleSizes() {
+				if (ylePlayerWindow) ylePlayerWidth = ylePlayerWindow.clientWidth * 2;
+				if (ylePlayerWidth) ylePlayerHeight = Math.ceil(ylePlayerWidth / (16 / 9)) + myPlayerPanelHeight;
+			}
 
-		function ylePlayer() {
-			var yleVideosPath = yleVideosContent.match(/"dataUrl":"(.*?)"/);
-			yleVideosPath = (yleVideosPath) ? yleVideosPath[1] : null;
-			if (yleVideosPath) yleVideosPath = cleanMyContent(yleVideosPath, false, false);
-			yleVideosFlavors = yleVideosContent.match(/flavorAssets":\[(.*?)\]/);
-			yleVideosFlavors = (yleVideosFlavors) ? yleVideosFlavors[1] : null;
+			/* Resize Event */
+			page.win.addEventListener('resize', function() {
+				yleSizes();
+				if (player) {
+					player['playerWidth'] = ylePlayerWidth;
+					player['playerHeight'] = ylePlayerHeight;
+					resizeMyPlayer('widesize');
+				}
+			}, false);
+			yleSizes();
 
-			var yleVideoList = {};
-			var yleVideoFound = false;
-			var yleVideoFormats = {'240': 'Low Definition MP4', '360': 'Low Definition MP4', '480': 'Standard Definition MP4', '540': 'Standard Definition MP4', '576': 'High Definition MP4', '720': 'High Definition MP4', '1080': 'Full High Definition MP4'};
-			if (yleVideosPath && yleVideosFlavors) {
-				var yleVideo, yleVideoId, ylePattern;
-				var yleVideosFlavors = yleVideosFlavors.split('},{');
-				for (var vCode in yleVideoFormats) {
-					for (var f = 0; f < yleVideosFlavors.length; f++ ) {
-						ylePattern = '"height":' + vCode + '.*?"id":"(.*?)"';
-						yleVideoId = yleVideosContent.match(ylePattern);
-						yleVideoId = (yleVideoId) ? yleVideoId[1] : null;
-						if (yleVideoId) {
-							if (!yleVideoFound) yleVideoFound = true;
-							yleVideoList[yleVideoFormats[vCode]] = yleVideosPath + '/flavorId/' + yleVideoId;
+			/* Get Video Thumb */
+			var yleVideoThumb = getMyContent(page.url, 'meta\\s+property="og:image"\\s+content="(.*?)"');
+			if (!yleVideoThumb) yleVideoThumb = getMyContent(page.url, 'meta\\s+property="og:image:url"\\s+content="(.*?)"');
+			if (!yleVideoThumb) yleVideoThumb = getMyContent(page.url, 'imagesrcset="([^"]*?) 640');
+
+			function ylePlayer() {
+				var yleVideosPath = yleVideosContent.match(/"dataUrl":"(.*?)"/);
+				yleVideosPath = (yleVideosPath) ? yleVideosPath[1] : null;
+				if (yleVideosPath) yleVideosPath = cleanMyContent(yleVideosPath, false, false);
+				yleVideosFlavors = yleVideosContent.match(/flavorAssets":\[(.*?)\]/);
+				yleVideosFlavors = (yleVideosFlavors) ? yleVideosFlavors[1] : null;
+
+				var yleVideoList = {};
+				var yleVideoFound = false;
+				var yleVideoFormats = {'240': 'Low Definition MP4', '360': 'Low Definition MP4', '480': 'Standard Definition MP4', '540': 'Standard Definition MP4', '576': 'High Definition MP4', '720': 'High Definition MP4', '1080': 'Full High Definition MP4'};
+				if (yleVideosPath && yleVideosFlavors) {
+					var yleVideo, yleVideoId, ylePattern;
+					var yleVideosFlavors = yleVideosFlavors.split('},{');
+					for (var vCode in yleVideoFormats) {
+						for (var f = 0; f < yleVideosFlavors.length; f++ ) {
+							ylePattern = '"height":' + vCode + '.*?"id":"(.*?)"';
+							yleVideoId = yleVideosContent.match(ylePattern);
+							yleVideoId = (yleVideoId) ? yleVideoId[1] : null;
+							if (yleVideoId) {
+								if (!yleVideoFound) yleVideoFound = true;
+								yleVideoList[yleVideoFormats[vCode]] = yleVideosPath + '/flavorId/' + yleVideoId;
+							}
 						}
 					}
 				}
-			}
-			else {
-				var yleVideo = yleVideosContent.match(/"manifest_url":"(.*?)"/);
-				yleVideo = (yleVideo) ? yleVideo[1] : null;
-				if (yleVideo) {
-					yleVideoFound = true;
-					yleVideoList['HTTP Live Streaming M3U8'] = yleVideo;
-					/*
-					yleHLSContent = getMyContentOld(yleVideo, 'TEXT', false);
-					if (yleHLSContent) {
-						var yleHLSMatcher = new RegExp('(http.*?m3u8)', 'g');
-						var yleHLSVideos = yleHLSContent.match(yleHLSMatcher);
-						if (yleHLSVideos) {
-							for (var i = 0; i < yleHLSVideos.length; i++) {
-								yleHLSVideo = yleHLSVideos[i];
-								for (var vCode in yleVideoFormats) {
-									if (yleHLSVideo.indexOf('index' + vCode + 'p25') != -1 || yleHLSVideo.indexOf('index-' + vCode + 'p25') != -1 ||
-											yleHLSVideo.indexOf('index' + vCode + 'p50') != -1 || yleHLSVideo.indexOf('index-' + vCode + 'p50') != -1) {
-										yleVideoList[yleVideoFormats[vCode].replace('MP4', 'M3U8')] = yleHLSVideo;
+				else {
+					var yleVideo = yleVideosContent.match(/"manifest_url":"(.*?)"/);
+					yleVideo = (yleVideo) ? yleVideo[1] : null;
+					if (yleVideo) {
+						yleVideoFound = true;
+						yleVideoList['HTTP Live Streaming M3U8'] = yleVideo;
+						/*
+						yleHLSContent = getMyContent(yleVideo, 'TEXT', false);
+						if (yleHLSContent) {
+							var yleHLSMatcher = new RegExp('(http.*?m3u8)', 'g');
+							var yleHLSVideos = yleHLSContent.match(yleHLSMatcher);
+							if (yleHLSVideos) {
+								for (var i = 0; i < yleHLSVideos.length; i++) {
+									yleHLSVideo = yleHLSVideos[i];
+									for (var vCode in yleVideoFormats) {
+										if (yleHLSVideo.indexOf('index' + vCode + 'p25') != -1 || yleHLSVideo.indexOf('index-' + vCode + 'p25') != -1 ||
+												yleHLSVideo.indexOf('index' + vCode + 'p50') != -1 || yleHLSVideo.indexOf('index-' + vCode + 'p50') != -1) {
+											yleVideoList[yleVideoFormats[vCode].replace('MP4', 'M3U8')] = yleHLSVideo;
+										}
 									}
 								}
 							}
-						}
-					}*/
-					var yleCaptions = yleVideosContent.match(/"translation","uri":"(.*?)"/);
-					yleCaptions = (yleCaptions) ? yleCaptions[1] : null;
-					if (yleCaptions) yleVideoList['Subtitles M3U8'] = yleCaptions;
+						}*/
+						var yleCaptions = yleVideosContent.match(/"translation","uri":"(.*?)"/);
+						yleCaptions = (yleCaptions) ? yleCaptions[1] : null;
+						if (yleCaptions) yleVideoList['Subtitles M3U8'] = yleCaptions;
+					}
+				}
+
+				if (yleVideoFound) {
+					/* My Player Window */
+					myPlayerWindow = createMyElement('div', '', '', '', '');
+					styleMyElement(myPlayerWindow, {position: 'relative', width: ylePlayerWidth + 'px', height: ylePlayerHeight + 'px', textAlign: 'center'});
+					cleanMyElement(ylePlayerWindow, true);
+					appendMyElement(ylePlayerWindow, myPlayerWindow);
+
+					/* Create Player */
+					var yleDefaultVideo = 'Low Definition MP4';
+					if (yleVideoList['HTTP Live Streaming M3U8']) yleDefaultVideo = 'HTTP Live Streaming M3U8';
+					player = {
+						'playerSocket': ylePlayerWindow,
+						'playerWindow': myPlayerWindow,
+						'videoList': yleVideoList,
+						'videoDefinitions': ['Full High Definition', 'High Definition', 'Standard Definition', 'Low Definition'],
+						'videoContainers': ['MP4', 'M3U8'],
+						'videoPlay': yleDefaultVideo,
+						'videoThumb': yleVideoThumb,
+						'playerWidth': ylePlayerWidth,
+						'playerHeight': ylePlayerHeight
+					};
+					createMyPlayer();
+					var yleHeaderImage = getMyElement('', 'div', 'class', 'Header_image__DGRLC', 0, false);
+					if (yleHeaderImage) removeMyElement(yleHeaderImage.parentNode, yleHeaderImage);
+				}
+				else {
+					//showMyMessage('!videos');
 				}
 			}
 
-			if (yleVideoFound) {
-				/* My Player Window */
-				myPlayerWindow = createMyElement('div', '', '', '', '');
-				styleMyElement(myPlayerWindow, {position: 'relative', width: ylePlayerWidth + 'px', height: ylePlayerHeight + 'px', textAlign: 'center'});
-				cleanMyElement(ylePlayerWindow, true);
-				appendMyElement(ylePlayerWindow, myPlayerWindow);
-
-				/* Create Player */
-				var yleDefaultVideo = 'Low Definition MP4';
-				if (yleVideoList['HTTP Live Streaming M3U8']) yleDefaultVideo = 'HTTP Live Streaming M3U8';
-				player = {
-					'playerSocket': ylePlayerWindow,
-					'playerWindow': myPlayerWindow,
-					'videoList': yleVideoList,
-					'videoDefinitions': ['Full High Definition', 'High Definition', 'Standard Definition', 'Low Definition'],
-					'videoContainers': ['MP4', 'M3U8'],
-					'videoPlay': yleDefaultVideo,
-					'videoThumb': yleVideoThumb,
-					'playerWidth': ylePlayerWidth,
-					'playerHeight': ylePlayerHeight
-				};
-				createMyPlayer();
-				var yleHeaderImage = getMyElement('', 'div', 'class', 'Header_image__DGRLC', 0, false);
-				if (yleHeaderImage) removeMyElement(yleHeaderImage.parentNode, yleHeaderImage);
-			}
-			else {
-				//showMyMessage('!videos');
-			}
-		}
-
-		/* Get Videos Content */
-		var yleVideosContent;
-		var yleVideosSource = getMyContentOld(page.url, 'meta\\s+property="og:video:url"\\s+content="(.*?)"', false);
-		if (yleVideosSource) yleVideosContent = getMyContentOld(yleVideosSource, '"entryResult":\\s*\\{(.*?)\\}\\}', false);
-		if (yleVideosContent) {
-			ylePlayer();
-		}
-		else {
-			var ylePageId = page.url.match(/areena.yle.fi\/(.*?)(\/|$|#|\?)/);
-			ylePageId = (ylePageId) ? ylePageId[1] : null;
-			if (ylePageId) {
-				//yleVideosContent = getMyContentOld('https://player.api.yle.fi/v1/preview/' + ylePageId + '.json?language=fin&ssl=true&countryCode=FI&isInEU=true&host=areenaylefi&app_id=player_static_prod&app_key=8930d72170e48303cf5f3867780d549b', 'TEXT', false);
-				yleVideosContent = getMyContentOld('https://player.api.yle.fi/v1/preview/' + ylePageId + '.json?host=areenaylefi&app_id=player_static_prod&app_key=8930d72170e48303cf5f3867780d549b', 'TEXT', false);
-			}
-			if (yleVideosContent && yleVideosContent.indexOf('m3u8') != -1) {
+			/* Get Videos Content */
+			var yleVideosContent;
+			var yleVideosSource = getMyContent(page.url, 'meta\\s+property="og:video:url"\\s+content="(.*?)"');
+			if (yleVideosSource) yleVideosContent = getMyContent(yleVideosSource, '"entryResult":\\s*\\{(.*?)\\}\\}');
+			if (yleVideosContent) {
 				ylePlayer();
 			}
 			else {
-				var yleWaitForLoops = 50;
-				var yleWaitForObject = page.win.setInterval(function() {
-					var yleEntryId = page.body.innerHTML.match(/id="yle-kaltura-player\d+-\d+-(.*?)"/);
-					yleEntryId = (yleEntryId) ? yleEntryId[1] : null;
-					if (yleEntryId) {
-						var xmlhttp = new XMLHttpRequest();
-						xmlhttp.open('POST', 'https://cdnapisec.kaltura.com/api_v3/service/multirequest', false);
-						xmlhttp.setRequestHeader('Content-Type', 'application/json');
-						var json = '{"1":{"service":"session","action":"startWidgetSession","widgetId":"_1955031"},"2":{"service":"baseEntry","action":"list","ks":"{1:result:ks}","filter":{"redirectFromEntryId":"'+yleEntryId+'"},"responseProfile":{"type":1,"fields":"id,referenceId,name,description,thumbnailUrl,dataUrl,duration,msDuration,flavorParamsIds,mediaType,type,tags,dvrStatus,externalSourceType"}},"3":{"service":"baseEntry","action":"getPlaybackContext","entryId":"{2:result:objects:0:id}","ks":"{1:result:ks}","contextDataParams":{"objectType":"KalturaContextDataParams","flavorTags":"all"}},"4":{"service":"metadata_metadata","action":"list","filter":{"objectType":"KalturaMetadataFilter","objectIdEqual":"'+yleEntryId+'","metadataObjectTypeEqual":"1"},"ks":"{1:result:ks}"},"apiVersion":"3.3.0","format":1,"ks":"","clientTag":"html5:v0.45.8","partnerId":"1955031"}';
-						xmlhttp.send(JSON.stringify(JSON.parse(json)));
-						yleVideosContent = xmlhttp.responseText;
-						if (yleVideosContent) ylePlayer();
-					}
-					yleWaitForLoops--;
-					if (yleWaitForLoops == 0 || yleEntryId) {
-						clearInterval(yleWaitForObject);
-					}
-				}, 1000);
-				intervals.push(yleWaitForObject);
+				var ylePageId = page.url.match(/areena.yle.fi\/(.*?)(\/|$|#|\?)/);
+				ylePageId = (ylePageId) ? ylePageId[1] : null;
+				if (ylePageId) {
+					//yleVideosContent = getMyContent('https://player.api.yle.fi/v1/preview/' + ylePageId + '.json?language=fin&ssl=true&countryCode=FI&isInEU=true&host=areenaylefi&app_id=player_static_prod&app_key=8930d72170e48303cf5f3867780d549b', 'TEXT', false);
+					yleVideosContent = getMyContent('https://player.api.yle.fi/v1/preview/' + ylePageId + '.json?host=areenaylefi&app_id=player_static_prod&app_key=8930d72170e48303cf5f3867780d549b');
+				}
+				if (yleVideosContent && yleVideosContent.indexOf('m3u8') != -1) {
+					ylePlayer();
+				}
+				else {
+					var yleWaitForLoops = 50;
+					var yleWaitForObject = page.win.setInterval(function() {
+						var yleEntryId = page.body.innerHTML.match(/id="yle-kaltura-player\d+-\d+-(.*?)"/);
+						yleEntryId = (yleEntryId) ? yleEntryId[1] : null;
+						if (yleEntryId) {
+							var xmlhttp = new XMLHttpRequest();
+							xmlhttp.open('POST', 'https://cdnapisec.kaltura.com/api_v3/service/multirequest', false);
+							xmlhttp.setRequestHeader('Content-Type', 'application/json');
+							var json = '{"1":{"service":"session","action":"startWidgetSession","widgetId":"_1955031"},"2":{"service":"baseEntry","action":"list","ks":"{1:result:ks}","filter":{"redirectFromEntryId":"'+yleEntryId+'"},"responseProfile":{"type":1,"fields":"id,referenceId,name,description,thumbnailUrl,dataUrl,duration,msDuration,flavorParamsIds,mediaType,type,tags,dvrStatus,externalSourceType"}},"3":{"service":"baseEntry","action":"getPlaybackContext","entryId":"{2:result:objects:0:id}","ks":"{1:result:ks}","contextDataParams":{"objectType":"KalturaContextDataParams","flavorTags":"all"}},"4":{"service":"metadata_metadata","action":"list","filter":{"objectType":"KalturaMetadataFilter","objectIdEqual":"'+yleEntryId+'","metadataObjectTypeEqual":"1"},"ks":"{1:result:ks}"},"apiVersion":"3.3.0","format":1,"ks":"","clientTag":"html5:v0.45.8","partnerId":"1955031"}';
+							xmlhttp.send(JSON.stringify(JSON.parse(json)));
+							yleVideosContent = xmlhttp.responseText;
+							if (yleVideosContent) ylePlayer();
+						}
+						yleWaitForLoops--;
+						if (yleWaitForLoops == 0 || yleEntryId) {
+							clearInterval(yleWaitForObject);
+						}
+					}, 1000);
+					intervals.push(yleWaitForObject);
+				}
 			}
-		}
+
+		}, 1000);
 
 	}
 
