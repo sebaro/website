@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            ViewTube
-// @version         2024.07.24
+// @version         2024.08.07
 // @description     Watch videos from video sharing websites with extra options.
 // @author          sebaro
 // @namespace       http://sebaro.pro/viewtube
@@ -1345,6 +1345,7 @@ function ViewTube() {
 			if (ytMainFuncName) {
 				ytMainFuncBody = getMyContent(ytScriptUrl, new RegExp('(?:^|;)' + ytMainFuncName.replace(/\$/, '\\$') + '\\s*=\\s*function\\s*' + '\\s*\\(\\w+\\)\\s*\\{(.*?\\))\\};'));
 				if (ytMainFuncBody) {
+					ytMainFuncBody = ytMainFuncBody.replace(/(\d+)--(\d+)/, '$1- -$2', ytMainFuncBody);
 					ytMainFuncBody = 'try {' + ytMainFuncBody + '} catch(e) {return null}';
 					ytUnscrambleParam['n'] = new Function('a', ytMainFuncBody);
 				}
@@ -1694,6 +1695,7 @@ function ViewTube() {
 			if (ytMainFuncName) {
 				ytMainFuncBody = getMyContent(ytScriptUrl, new RegExp('(?:^|;)' + ytMainFuncName.replace(/\$/, '\\$') + '\\s*=\\s*function\\s*' + '\\s*\\(\\w+\\)\\s*\\{(.*?\\))\\};'));
 				if (ytMainFuncBody) {
+					ytMainFuncBody = ytMainFuncBody.replace(/(\d+)--(\d+)/, '$1- -$2', ytMainFuncBody);
 					ytMainFuncBody = 'try {' + ytMainFuncBody + '} catch(e) {return null}';
 					ytUnscrambleParam['n'] = new Function('a', ytMainFuncBody);
 				}
