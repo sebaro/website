@@ -150,6 +150,42 @@ textarea {
   text-shadow: 1px 1px 0px #DDDDDD;
 }
 
+.osubject {
+  display: inline-block;
+  text-align: justify;
+  width: 800px;
+  padding: 10px;
+  text-shadow: 1px 0px 0px #FFFFFF;
+  font-size: 16px;
+  margin-top: 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+  color: #B57900;
+  font-size: 16px;
+  font-size: bold;
+  text-shadow: 1px 1px 0px #DDDDDD;
+  cursor: pointer;
+}
+
+.omessage {
+  display: none;
+}
+
+.oentry {
+  display: inline-block;
+  text-align: justify;
+  width: 800px;
+  padding: 10px;
+  text-shadow: 1px 0px 0px #FFFFFF;
+  font-size: 16px;
+  color: #444444;
+  margin-top: 20px;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+}
+
 .author {
   color: #325E9D;
   font-size: 18px;
