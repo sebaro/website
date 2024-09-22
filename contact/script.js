@@ -63,18 +63,18 @@ function show() {
 	for (var i = 0; i < data.length; i++) {
 		subjects[data[i]['subject']] = data[i]['date'];
 	}
-	for (var subject in subjects) {
+	for (var key in subjects) {
 		days = 0;
 		try {
-			sd = new Date(subjects[subject].replace('/', 'T')).getTime();
+			sd = new Date(subjects[key].replace('/', 'T')).getTime();
 			days = (cd / 1000 - sd / 1000 ) / (60 * 60 * 24);
 		}
 		catch(e) {}
 		if (days <= threshold) {
-			active.push(subject);
+			active.push(key);
 		}
 		else {
-			archive.push(subject);
+			archive.push(key);
 		}
 	}
 	active = active.reverse();
