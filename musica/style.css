@@ -3,6 +3,7 @@ body {
 	margin: 0px;
 	background-color: #F5F5F5;
 	font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+	text-align: center;
 }
 
 a {
@@ -130,10 +131,11 @@ hr {
 }
 
 .album_list {
+	display: block;
 	max-width: 1040px;
 	background-color: #F5F5F5;
 	margin: 10px auto;
-	padding: 10px 60px 10px 60px;
+	padding: 10px 50px 10px 50px;
 	vertical-align: middle;
 	text-align: justify;
 }
