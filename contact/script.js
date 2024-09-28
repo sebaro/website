@@ -64,8 +64,8 @@ function show() {
 	for (var i = 0; i < data.length; i++) {
 		dates[data[i]['subject']] = data[i]['date'];
 	}
-	for (var subject in dates) {
-		subjects.push({'title': subject, 'date': dates[subject]});
+	for (var entry in dates) {
+		subjects.push({'title': entry, 'date': dates[entry]});
 	}
 	subjects.sort(function(a, b) {
 		return a['date'].replace(/[^\d]/g, '') - b['date'].replace(/[^\d]/g, '');
@@ -114,6 +114,9 @@ function show() {
 		rbox = create('div', {className: 'rbox'});
 		rbutton = create('div', {className: 'rbutton', textContent: 'Reply'}, 'click', function() {
 			window.scrollTo(0, 0);
+			author.focus();
+			author.value = ''
+			author.value = 'Author';
 			subject.value = active[this];
 		}.bind(i));
 		rbox.appendChild(rbutton);
