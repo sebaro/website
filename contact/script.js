@@ -55,26 +55,33 @@ function request(post) {
 function show() {
 	var mbox, mid, msubject, mauthor, mcontent, mdate, mstyle, osubject, obox;
 	var rbox, rbutton;
-	var subjects = {};
+	var dates = {};
+	var subjects = [];
 	var active = [];
 	var archive = [];
 	var threshold = 100, days, sd, cd = new Date().getTime();
 	var ns, nl;
 	for (var i = 0; i < data.length; i++) {
-		subjects[data[i]['subject']] = data[i]['date'];
+		dates[data[i]['subject']] = data[i]['date'];
 	}
-	for (var key in subjects) {
+	for (var subject in dates) {
+		subjects.push({'title': subject, 'date': dates[subject]});
+	}
+	subjects.sort(function(a, b) {
+		return a['date'].replace(/[^\d]/g, '') - b['date'].replace(/[^\d]/g, '');
+	});
+	for (var i = 0; i < subjects.length; i++) {
 		days = 0;
 		try {
-			sd = new Date(subjects[key].replace('/', 'T')).getTime();
+			sd = new Date(subjects[i]['date'].replace('/', 'T')).getTime();
 			days = (cd / 1000 - sd / 1000 ) / (60 * 60 * 24);
 		}
 		catch(e) {}
 		if (days <= threshold) {
-			active.push(key);
+			active.push(subjects[i]['title']);
 		}
 		else {
-			archive.push(key);
+			archive.push(subjects[i]['title']);
 		}
 	}
 	active = active.reverse();
@@ -212,7 +219,6 @@ submit.addEventListener('click', function() {
 		post['subject'] = subject.value.replace('&amp;', '&').replace('&', '&amp;').trim();
 		post['message'] = message.value.replace('&amp;', '&').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace(/\r/g, '');
 		post['date'] = new Date().toISOString().replace(/:[^:]+$/, '').replace('T', '/');
-		//console.log(post);
 		warn = '';
 		error.style.display = 'none';
 		data = [];
