@@ -11,8 +11,9 @@ function create(type, properties, event, listener) {
 }
 
 function request(post) {
-	var url = 'https://sebaro-apps.vercel.app/api/contact';
-	//var url = './messages.php';
+	//var url = 'https://sebaro-apps.vercel.app/api/contact';
+	//var url = 'http://localhost:7777';
+	var url = 'https://experienced-late-joke.anvil.app/contact';
 	var xhr = new XMLHttpRequest();
 	var method = 'GET';
 	if (post) {
@@ -23,6 +24,9 @@ function request(post) {
 		post = null;
 	}
 	xhr.open(method, url, true);
+	if (post) {
+		xhr.setRequestHeader('Content-Type', 'application/json');
+	}
 	xhr.onload = function (e) {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
