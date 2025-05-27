@@ -55,43 +55,53 @@ var stages = {
 var nutrients = {
 
   'Proximates' : {
-    'Water'        : 'Water'},
-    'Energy'       : 'Energy'},
-    'Protein'      : 'Protein'},
-    'Lipid'        : 'Fatty acids'},
-    'Carbohydrate' : 'Carbohydrate'},
-    'Fiber'        : 'Fiber'}
+    'Water'        : {'name' : 'Water',        'id' : '1051'},
+    'Energy'       : {'name' : 'Energy',       'id' : '1008'},
+    'Protein'      : {'name' : 'Protein',      'id' : '1003'},
+    'Lipid'        : {'name' : 'Fatty acids',  'id' : '1293'},
+    'Carbohydrate' : {'name' : 'Carbohydrate', 'id' : '1005'},
+    'Fiber'        : {'name' : 'Fiber',        'id' : '1079'}
   },
   'Minerals' : {
-    'K'  : 'Potassium'},
-    'Cl' : 'Chlorine'},
-    'Na' : 'Sodium'},
-    'Ca' : 'Calcium'},
-    'P'  : 'Phosphorus'},
-    'Mg' : 'Magnesium'},
-    'Fe' : 'Iron'},
-    'Zn' : 'Zinc'},
-    'Mn' : 'Manganese'},
-    'Cu' : 'Copper'},
-    'Io' : 'Iodine'},
-    'Se' : 'Selenium'},
-    'Mo' : 'Molybdenum'}
+    'K'  : {'name' : 'Potassium',  'id' : '1092'},
+    'Cl' : {'name' : 'Chlorine',   'id' : '1088'},
+    'Na' : {'name' : 'Sodium',     'id' : '1093'},
+    'Ca' : {'name' : 'Calcium',    'id' : '1087'},
+    'P'  : {'name' : 'Phosphorus', 'id' : '1091'},
+    'Mg' : {'name' : 'Magnesium',  'id' : '1090'},
+    'Fe' : {'name' : 'Iron',       'id' : '1089'},
+    'Zn' : {'name' : 'Zinc',       'id' : '1095'},
+    'Mn' : {'name' : 'Manganese',  'id' : '1101'},
+    'Cu' : {'name' : 'Copper',     'id' : '1098'},
+    'Io' : {'name' : 'Iodine',     'id' : '1100'},
+    'Se' : {'name' : 'Selenium',   'id' : '1103'},
+    'Mo' : {'name' : 'Molybdenum', 'id' : '1102'}
   },
   'Vitamins' : {
-    'A'  : 'Vitamin A (Retinol, Carotene)'},
-    'B1' : 'Vitamin B1 (Thiamin)'},
-    'B2' : 'Vitamin B2 (Riboflavin)'},
-    'B3' : 'Vitamin B3 (Niacin)'},
-    'B4' : 'Vitamin B4 (Choline)'},
-    'B5' : 'Vitamin B5 (Pantothenic acid)'},
-    'B6' : 'Vitamin B6 (Pyridoxine, Pyridoxal, Pyridoxamine)'},
-    'B7' : 'Vitamin B7 (Biotin)'},
-    'B9' : 'Vitamin B9 (Folate, Folic acid)'},
-    'B12': 'Vitamin B12 (Cobalamin)'},
-    'C'  : 'Vitamin C (Ascorbic acid)'},
-    'D'  : 'Vitamin D (D2: Ergocalciferol + D3: Cholecalciferol)'},
-    'E'  : 'Vitamin E (Alpha-tocopherol)'},
-    'K'  : 'Vitamin K (K1: Phylloquinone + K2: Menaquinone-4)'}
+    'A'  : {'name' : 'Vitamin A (Retinol, Carotene)',                        'id' : '1106or1104'},
+    'B1' : {'name' : 'Vitamin B1 (Thiamin)',                                 'id' : '1165'},
+    'B2' : {'name' : 'Vitamin B2 (Riboflavin)',                              'id' : '1166'},
+    'B3' : {'name' : 'Vitamin B3 (Niacin)',                                  'id' : '1167'},
+    'B4' : {'name' : 'Vitamin B4 (Choline)',                                 'id' : '1180'},
+    'B5' : {'name' : 'Vitamin B5 (Pantothenic acid)',                        'id' : '1170'},
+    'B6' : {'name' : 'Vitamin B6 (Pyridoxine, Pyridoxal, Pyridoxamine)',     'id' : '1175'},
+    'B7' : {'name' : 'Vitamin B7 (Biotin)',                                  'id' : '1176'},
+    'B9' : {'name' : 'Vitamin B9 (Folate, Folic acid)',                      'id' : '1190'},
+    'B12': {'name' : 'Vitamin B12 (Cobalamin)',                              'id' : '1178'},
+    'C'  : {'name' : 'Vitamin C (Ascorbic acid)',                            'id' : '1162'},
+    'D'  : {'name' : 'Vitamin D (D2: Ergocalciferol + D3: Cholecalciferol)', 'id' : '1114or1110'},
+    'E'  : {'name' : 'Vitamin E (Alpha-tocopherol)',                         'id' : '1109or1124'},
+    'K'  : {'name' : 'Vitamin K (K1: Phylloquinone + K2: Menaquinone-4)',    'id' : '1185and1183'}
+  }
+
+};
+
+var nutrientsIU = {
+
+  'Vitamins' : {
+    'Vitamin A, RAE'               : 'Vitamin A, IU',
+    'Vitamin D (D2 + D3)'          : 'Vitamin D (D2 + D3), International Units',
+    'Vitamin E (alpha-tocopherol)' : 'Vitamin E (label entry primarily)'
   }
 
 };

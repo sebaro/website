@@ -48,7 +48,7 @@ function dom(object, type, properties, parent, event, listener) {
 
 function request(query, callback) {
   console.log(query);
-  var url = 'https://experienced-late-joke.anvil.app/nutricalc;
+  var url = 'https://sebaro-apps.vercel.app/api/nutricalc';
   var xhr = new XMLHttpRequest();
   xhr.open('POST', url, true);
   xhr.onload = function(e) {
@@ -152,7 +152,7 @@ function search(keywords) {
     type = 'food';
   }
 
-  request({'method':'search', 'type': type, 'keywords': keywords, 'results': 100}, list.bind(null, 'foo'));
+  request({'method':'search', 'type': type, 'string': keywords, 'results': 100}, list.bind(null, 'foo'));
 
 }
 
