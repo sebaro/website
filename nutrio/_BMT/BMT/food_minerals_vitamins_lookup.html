@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Body Maintainer Tool</title>
+<meta name="description" content="Body Maintainer Tool: TDEE calculation, food minerals&vitamins lookup, food calories lookup, and exercise caloric expenditure lookup" />
+<meta name="keywords" content="calorie counter, vitamin counter, mineral counter, food calories, food calories lookup, exercise coloric expenditure lookup, USDA NDB" />
+<link rel="stylesheet" href="./stylesheets/BMTpagesStyle.css" type="text/css" />
+</head>
+
+<body>
+
+<div id="menu">
+<a href="intro.html">Intro</a>
+<a href="TDEE_calculation.html">Calculate your TDEE</a>
+<a href="food_minerals_vitamins_lookup.html">food minerals&vitamins lookup</a>
+<a href="food_calories_lookup.html">food calories lookup</a>
+<a href="exercise_caloric_expenditure_lookup.html">exercise caloric expenditure lookup</a>
+</div>
+
+<div id="maincolumn">
+<h1>Food minerals & vitamins lookup</h1>
+
+<div class="frame">
+
+<div id="header">Daily Food Nutrients Calculator</div>
+
+<div id="form"></div>
+
+<div id="table"></div>
+<div id="info">
+<br />
+<b>Adequate</b> values represent <b>Recommended Dietary Allowances (RDA)</b> and <b>Adequate Intakes (AI)</b>, the average daily dietary intake level sufficient to meet the nutrient requirements of nearly all (97-98 percent) healthy individuals in a group.
+<br />
+<b>Tolerable</b> values reprezent <b>Tolerable Upper Intake Level (UL)</b>, the highest level of daily nutrient intake that is likely to pose no risk of adverse health effects to almost all individuals in the general population.
+<br />
+<b>ND</b> represents not determinable value due to lack of data of adverse effects in this age group and concern with regard to lack of ability to handle excess amounts.
+<br />
+<b>Lipid</b> reprezents only the two essential fatty acids (EFAs) in human nutrition, <b>alpha-linolenic acid</b> (an omega-3 fatty acid) and <b>linoleic acid</b> (an omega-6 fatty acid).
+<br />
+<br />red: more than 40% below adequate RDA
+<br />yellow: between 20% and 40% below adequate RDA
+<br />green: between 20% below RDA and UL
+<br />purple: above UL
+<br />
+<br />
+This site uses data from <a href="https://ndb.nal.usda.gov/ndb/doc/">USDA Food Composition Databases</a>
+</div>
+</div>
+
+<script type="text/javascript" src="./js/data.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+
+
+<h2>Minerals</h2>
+
+<p>
+* calcium: main sources are dairy, calcium-fortified tofu and seaweeds (eg kombu, nori, arame), aswell as legumes/vegetables (eg kale, broccoli, cabbage, beans, spinach,...), certain fruits (eg orange juice), ...<br />
+optimal dietary amount: 1000 - 1500 mg (standard/RDA= 1000 - 1200 mg)<br />
+safe upper limit: 2500 mg<br />
+<br />
+* sodium:<br />
+optimal dietary amount: unknown (standard/RDA= 1500 mg)<br />
+safe upper limit: 2300 mg<br />
+<br />
+* chlorine: <br />
+optimal dietary amount: unknown (standard/RDA=250 - 550 mg<br />
+safe upper limit: 3500 mg<br />
+<br />
+* magnesium: <br />
+optimal dietary amount: 310 - 420 mg (standard/RDA= 310 - 420 mg)<br />
+safe upper limit: 350 mg<br />
+<br />
+* iron: <br />
+optimal dietary amount: 10 - 15 mg (standard/RDA= 10 - 15 mg)<br />
+safe upper limit: 30 mg<br />
+<br />
+* potassium: <br />
+optimal dietary amount: unknown (standard/RDA = 4700 mg)<br />
+safe upper limit: 3700 mg<br />
+<br />
+* copper:<br />
+optimal dietary amount: unknown (standard/RDA=1,5 - 3 mg)<br />
+safe upper limit: 10 mg<br />
+<br />
+* molybdenum: <br />
+optimal dietary amount: unknown (standard/RDA= 0,075 - 0,250 mg) <br />
+safe upper limit: 1 mg<br />
+<br />
+* selenium:<br />
+optimal dietary amount: 0,1 - 0,2 mg (standard/RDA= 0,055 mg)<br />
+safe upper limit: 0,4 mg<br />
+<br />
+* vanadium: <br />
+optimal dietary amount: unknown (standard=0,5 - 1 mg)<br />
+safe upper limit: 1,8 mg<br />
+<br />
+* boron: <br />
+optimal dietary amount: unknown (standard= 2 - 3 mg)<br />
+safe upper limit: 20 mg<br />
+<br />
+* chromium:<br />
+optimal dietary amount: 0,050 -0,200 mg (standard/RDA= 0,050-0,200 mg)<br />
+safe upper limit: unknown<br />
+<br />
+* cobalt:<br />
+optimal dietary amount: unknown (standard/RDA= 0,012 mg)<br />
+safe upper limit: 0,1 - 0,2 mg<br />
+<br />
+* manganese:<br />
+optimal dietary amount: unknown (standard/RDA= 2 - 5 mg)<br />
+safe upper limit: 10 mg<br />
+<br />
+* iodine:<br />
+optimal dietary amount: unknown (standard/RDA=0,0150 mg)<br />
+safe upper limit: 2 mg<br />
+<br />
+* phosphorus:<br />
+optimal dietary amount: 800 - 1200 mg (standard/RDA=700 mg)<br />
+safe upper limit: 3000 - 4000 mg<br />
+<br />
+* zinc<br />
+optimal dietary amount: 12 - 15 mg<br />
+safe upper limit: 15 mg<br />
+<br />
+
+<h2>Vitamins</h2>
+
+<p>
+* for folate: orange juice, spinach, legumes, soy<br />
+optimal amount: 0,4 - 0,8 mg (standard/RDA=0,4 mg)<br />
+safe upper limit: 1 mg<br />
+
+* for vitamin A: yellow and orange fruit/vegetables, green leafy vegetables, liver, dairy products<br />
+needed for: good vision, growth, skin, resistance; max amounts are 3 milligram in pure-retinol form;
+optimal dietary amount: 1,5 mg (standard/RDA= 1 mg)<br />
+safe upper limit: 15 mg<br />
+
+* for vitamin B1 (thiamin): yeast, wheat, whole grains, liver<br />
+optimal dietary amount: unknown (standard/RDA=1,1 mg)<br />
+safe upper limit: less than 100 mg<br />
+needed for: energy absorption from food, good performance of heart and kidneysystem;<br />
+
+* for vitamin B2 (riboflavin): yeast, whole grains, leafy vegetables, milk and eggs<br />
+needed for: energy absorption from food, skin;<br />
+optimal dietary amount: unknown (standard/RDA=1,1 mg)<br />
+safe upper limit: less than 100 mg<br />
+
+* for vitamin B3 (niacin): meat, poultry, fish, enriched grain products, peanuts, potatoes, dairy and eggs<br />
+needed for: energy absorption from food;<br />
+optimal dietary amount: unknown (standard/RDA= 14 - 16 mg)<br />
+safe upper limit: less than 35 mg<br />
+
+* for vitamin B5 (pantothene acid): lean meat, whole grains, legumes, vegetables, fruit<br />
+needed for: energy absorption from food;<br />
+optimal dietary amount: unknown (standard/RDA=5 mg)<br />
+safe upper limit: ?<br />
+
+* for vitamin B6 (pyrodoxine): fish, poultry, skin meat, bananas, dried prumes, whole grains, avocados<br />
+needed for: resistance, protein buildup/break-up , nerve system;<br />
+optimal dietary amount: unknown (standard/RDA=1,3mg-1,5mg)<br />
+safe upper limit: 100 mg<br />
+
+* for vitamin B8 (biotin; aka vitamin H): grain and grain products, yeast, liver and legumes<br />
+needed for: energy absorption from food<br />
+optimal dietary amount: unknown (standard/RDA= 0,030 mg)<br />
+safe upper limit: unknown<br />
+
+* for vitamin B11 (folic acid): leafy vegetables, dried peas, beans, lentils<br />
+needed for: production of red blood cells<br />
+optimal dietary amount: unknown (standard/RDA= 0,3 mg)<br />
+safe upper limit: 1 mg<br />
+
+* for vitamin B12 (cobalamin): meat mollusks and crustaceans, dairy products<br />
+needed for: creation of red bloodcells, nerve system<br />
+optimal dietary amount: unknown (standard/RDA=0,0024 mg)<br />
+safe upper limit: unknown<br />
+
+* for vitamin C (ascorbine acid): citrus fruit, berries, vegetables, potatoes, peppers<br />
+needed for: healing process, resistance, uptake of iron from food<br />
+optimal dietary amount: 500 - 1000 mg (standard/RDA: 75 - 90 mg);<br />
+safe upper limit: 2000 mg<br />
+
+* for vitamin D (cholecalciferol) : mostly sunshine (add extra food sources when living in a dark/northern country !), seafood, fish, dairy, mushrooms, ...<br />
+needed for: uptake of calcium, strong bones and teeth<br />
+optimal dietary amount: 0,015 -0,030 mg (standard/RDA= 0,005 -0,0010 mg)<br />
+safe upper limit: 0,050 mg<br />
+
+* for vitamin E (tocoferol): nuts, green leafy vegetables, wheat germ and other grains, healthy vegetable oils needed for: cell protection<br />
+optimal dietary amount: 50 - 400 mg (standard/RDA= 15 mg)<br />
+safe upper limit: 800 - 1000 milligram<br />
+
+* for vitamin K (fylochinon): green leafy vegetables, fruit, dairy products and grain products<br />
+needed for: blood coagulation, strong bones<br />
+optimal dietary amount: 60 - 200 mg (standard/RDA= 60 - 80 mg)<br />
+safe upper limit: unknown<br />
+</p>
+
+<p>To be complete, here are the rest of the main nutrients you also need to consume daily<br />
+* fibres: main sources are grains (rice, quinoa, amaranth, wheat, barley, ...), certain vegetables (eg celery, cabbage, fennel, sweet potato, konnyaku), certain products as popcorn, ...<br />
+optimal dietary amount: ? (standard/RDA= 25000 - 38000 mg)<br />
+safe upper limit ?<br />
+<br />
+* protein: main sources are legumes, soy, tempeh, milk, nuts (eg walnuts, almonds, hazel, sesamenuts, pumpkin and sunflower seeds), soy derivates (eg tofu, seitan, soy-milk, yoghurt, ...). Note that the total carbohydrates (which are the proteins, sugars, fats, ... combined) are to be 250 grams/daily.<br />
+optimal dietary amount: ? (standard/RDA= 56000 mg)<br />
+safe upper limit ?<br />
+To calculate your optimum minimum daily requirements you can multiply your optimal body weight by 0,36<br />
+<br />
+* sugars: less than 30% of carbohydrate intake; good sources are fruits (eg figs, papaya, orange, raisins, currants, banana, ...)
+optimal dietary amount: unknown (standard/RDA= ? mg)<br />
+safe upper limit: <br />
+<br />
+* flavonoids: tofu, tempeh, soy, legumes, nuts, ...
+optimal dietary amount: ? mg (standard/RDA= ? mg)<br />
+safe upper limit: <br />
+* fats: main sources are almonds, wal nuts, avocado and healthy cooking oils
+optimal dietary amount (standard/RDA= 57000 - 80000 mg)<br />
+safe upper limit: <br />
+* in addition, certain other substances as potassium and salt (in ratio 2:1), and water (2,2 liter daily for female, 3 liter for male) also need to be included
+</p>
+
+</div>
+
+<div id="footer" style="text-align:center">
+Content is made available under the <a href="./gpl-3.0.txt">GPL v3 license</a>.
+</div>
+
+</body>
+</html>

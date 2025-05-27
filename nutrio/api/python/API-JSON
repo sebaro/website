@@ -1,0 +1,17 @@
+
+SEARCH
+request({'method':'search', 'type': type, 'string': keywords, 'results': 100}, list.bind(null, 'foo'));
+
+Response food:
+{"id": e["id"], "name": e["description"]}
+
+Rsponse nutrient:
+{"id": e["id"], "name": e["description"], "value": value}
+
+---
+
+REPORT
+request({'method':'report', 'type': 'food', 'string': id, 'results': 100}, process.bind(null, 'show'));
+
+Response:
+{"id": e["id"], "name": e["name"], "unit": e["unit"], "value": values[e["id"]]}

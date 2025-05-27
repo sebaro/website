@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+
+  <script>
+
+  var nutrients = {
+
+  'Proximates' : {
+    'Water'        : {'name' : 'Water',        'id' : '1051'},
+    'Energy'       : {'name' : 'Energy',       'id' : '1008'},
+    'Protein'      : {'name' : 'Protein',      'id' : '1003'},
+    'Lipid'        : {'name' : 'Fatty acids',  'id' : '1293'},
+    'Carbohydrate' : {'name' : 'Carbohydrate', 'id' : '1005'},
+    'Fiber'        : {'name' : 'Fiber',        'id' : '1079'}
+  },
+  'Minerals' : {
+    'K'  : {'name' : 'Potassium',  'id' : '1092'},
+    'Cl' : {'name' : 'Chlorine',   'id' : '1088'},
+    'Na' : {'name' : 'Sodium',     'id' : '1093'},
+    'Ca' : {'name' : 'Calcium',    'id' : '1087'},
+    'P'  : {'name' : 'Phosphorus', 'id' : '1091'},
+    'Mg' : {'name' : 'Magnesium',  'id' : '1090'},
+    'Fe' : {'name' : 'Iron',       'id' : '1089'},
+    'Zn' : {'name' : 'Zinc',       'id' : '1095'},
+    'Mn' : {'name' : 'Manganese',  'id' : '1101'},
+    'Cu' : {'name' : 'Copper',     'id' : '1098'},
+    'Io' : {'name' : 'Iodine',     'id' : '1100'},
+    'Se' : {'name' : 'Selenium',   'id' : '1103'},
+    'Mo' : {'name' : 'Molybdenum', 'id' : '1102'}
+  },
+  'Vitamins' : {
+    'A'  : {'name' : 'Vitamin A (Retinol, Carotene)',                        'id' : '1106or1104'},
+    'B1' : {'name' : 'Vitamin B1 (Thiamin)',                                 'id' : '1165'},
+    'B2' : {'name' : 'Vitamin B2 (Riboflavin)',                              'id' : '1166'},
+    'B3' : {'name' : 'Vitamin B3 (Niacin)',                                  'id' : '1167'},
+    'B4' : {'name' : 'Vitamin B4 (Choline)',                                 'id' : '1180'},
+    'B5' : {'name' : 'Vitamin B5 (Pantothenic acid)',                        'id' : '1170'},
+    'B6' : {'name' : 'Vitamin B6 (Pyridoxine, Pyridoxal, Pyridoxamine)',     'id' : '1175'},
+    'B7' : {'name' : 'Vitamin B7 (Biotin)',                                  'id' : '1176'},
+    'B9' : {'name' : 'Vitamin B9 (Folate, Folic acid)',                      'id' : '1190'},
+    'B12': {'name' : 'Vitamin B12 (Cobalamin)',                              'id' : '1178'},
+    'C'  : {'name' : 'Vitamin C (Ascorbic acid)',                            'id' : '1162'},
+    'D'  : {'name' : 'Vitamin D (D2: Ergocalciferol + D3: Cholecalciferol)', 'id' : '1114or1110'},
+    'E'  : {'name' : 'Vitamin E (Alpha-tocopherol)',                         'id' : '1109or1124'},
+    'K'  : {'name' : 'Vitamin K (K1: Phylloquinone + K2: Menaquinone-4)',    'id' : '1185and1183'}
+  }
+
+  };
+
+  function parse(nutrient, values) {
+    var value = 0;
+    var nmame, nunit, nvalue;
+    var cunit = {};
+    for (var i = 0; i < values.length; i++) {
+      nname = values[i]['nutrient'];
+      nnamec = response[i]['nutrient'].replace(/,.*/, '').replace(/\(.*/, '').replace(/B-/, 'B').trim();
+      nunit = values[i]['unit'].toLowerCase();
+      punit = '';
+      nvalue = values[i]['value'];
+      if (nutrient.toLowerCase().indexOf(nnamec.toLowerCase()) !== -1) {
+        console.log('> ' + nname + ' : ' + nvalue + ' ' + nunit);
+        if (nunit == 'g') nvalue = nvalue * 1000000;
+        if (nunit == 'mg') nvalue = nvalue * 1000;
+        if (nunit == 'iu') nvalue = nvalue * 0.3;
+        if (cunit[nutrient] == nunit) {
+          value += + nvalue;
+        }
+        else {
+          if (!value) {
+            value = + nvalue;
+          }
+          else {
+            i = values.length;
+          }
+        }
+        cunit[nutrient] = nunit;
+      }
+    }
+    return value;
+  }
+
+  response = [{"nutrient":"Vitamin E (alpha-tocopherol)","unit":"MG","value":"0.3"},{"nutrient":"Iron, Fe","unit":"MG","value":"1.57"},{"nutrient":"Manganese, Mn","unit":"MG","value":"0.013"},{"nutrient":"Thiamin","unit":"MG","value":"0.066"},{"nutrient":"Carbohydrate, by difference","unit":"G","value":"0.0"},{"nutrient":"Vitamin A, RAE","unit":"UG","value":"10"},{"nutrient":"Zinc, Zn","unit":"MG","value":"3.94"},{"nutrient":"Vitamin K (Menaquinone-4)","unit":"UG","value":"0.1"},{"nutrient":"Copper, Cu","unit":"MG","value":"0.073"},{"nutrient":"Vitamin D (D2 + D3), International Units","unit":"IU","value":"20"},{"nutrient":"Biotin","unit":"UG","value":"0"},{"nutrient":"Chlorine, Cl","unit":"MG","value":"0"},{"nutrient":"Phosphorus, P","unit":"MG","value":"202"},{"nutrient":"Vitamin A, IU","unit":"IU","value":"20"},{"nutrient":"Pantothenic acid","unit":"MG","value":"0.638"},{"nutrient":"Fatty acids, total polyunsaturated","unit":"G","value":"0.193"},{"nutrient":"Magnesium, Mg","unit":"MG","value":"23"},{"nutrient":"Vitamin C, total ascorbic acid","unit":"MG","value":"0.0"},{"nutrient":"Vitamin B-6","unit":"MG","value":"0.604"},{"nutrient":"Choline, total","unit":"MG","value":"90.1"},{"nutrient":"Fiber, total dietary","unit":"G","value":"0.0"},{"nutrient":"Iodine, I","unit":"UG","value":"0"},{"nutrient":"Riboflavin","unit":"MG","value":"0.108"},{"nutrient":"Vitamin B-12","unit":"UG","value":"1.06"},{"nutrient":"Water","unit":"G","value":"72.08"},{"nutrient":"Sodium, Na","unit":"MG","value":"55"},{"nutrient":"Vitamin E (label entry primarily)","unit":"IU","value":"200"},{"nutrient":"Selenium, Se","unit":"UG","value":"26.4"},{"nutrient":"Calcium, Ca","unit":"MG","value":"24"},{"nutrient":"Folate, DFE","unit":"UG","value":"13"},{"nutrient":"Vitamin K (phylloquinone)","unit":"UG","value":"1.2"},{"nutrient":"Molybdenum, Mo","unit":"UG","value":"0"},{"nutrient":"Vitamin D (D2 + D3)","unit":"UG","value":"0.0"},{"nutrient":"Protein","unit":"G","value":"21.57"},{"nutrient":"Energy","unit":"KCAL","value":"141.0"},{"nutrient":"Niacin","unit":"MG","value":"6.683"},{"nutrient":"Potassium, K","unit":"MG","value":"340"}];
+
+  for (var ng in nutrients) {
+    for (var n in nutrients[ng]) {
+      v = parse(nutrients[ng][n]['name'], response);
+      console.log(nutrients[ng][n]['name'], v);
+    }
+  }
+
+  </script>
+
+  </body>
+</html>

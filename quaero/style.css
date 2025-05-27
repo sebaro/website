@@ -1,0 +1,61 @@
+
+body {
+	margin:0px;
+	padding:0px;
+	background-color:#000000;
+	text-align:center;
+	background-image: url("background.png");
+	background-repeat: no-repeat;
+}
+
+img {
+	width:200px;
+	border-radius:20px;
+}
+
+input {
+	background-color:#EEEEEE;
+	padding:10px;
+	font-size:18px;
+	border-radius:0px;
+	border:0px;
+}
+
+input.query {
+	width:100%;
+	border:0px;
+}
+
+input.button {
+	width:100px;
+	color:#000000;
+	background-color:orange;
+	cursor:pointer;
+	border-radius:5px;
+}
+
+select {
+	background-color:#EEEEEE;
+	padding:10px;
+	font-size:18px;
+	border-radius:0px;
+	border:0px;
+}
+
+.logo {
+	margin-top:100px;
+}
+
+.searchbar {
+	display:inline-block;
+	display:flex;
+	width:80%;
+	background-color:#EEEEEE;
+	padding:3px;
+	border-radius:5px;
+	margin:0px auto;
+}
+
+*:focus {
+	outline:none;
+}

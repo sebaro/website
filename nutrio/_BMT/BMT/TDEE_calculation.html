@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Body Maintainer Tool</title>
+<meta name="description" content="Body Maintainer Tool: TDEE calculation, food minerals&vitamins lookup, food calories lookup, and exercise caloric expenditure lookup" />
+<meta name="keywords" content="calorie counter, vitamin counter, mineral counter, food calories, food calories lookup, exercise coloric expenditure lookup, USDA NDB" />
+<link rel="stylesheet" href="./stylesheets/BMTpagesStyle.css" type="text/css" />
+</head>
+
+<body>
+
+<div id="menu">
+<a href="intro.html">Intro</a>
+<a href="TDEE_calculation.html">Calculate your TDEE</a>
+<a href="food_minerals_vitamins_lookup.html">food minerals&vitamins lookup</a>
+<a href="food_calories_lookup.html">food calories lookup</a>
+<a href="exercise_caloric_expenditure_lookup.html">exercise caloric expenditure lookup</a>
+</div>
+
+<div id="maincolumn">
+<h1>TDEE calculation</h1>
+
+<h2>Terminologies and calculation principle</h2>
+
+<p>We'll start off with some basic terms you'll encounter here:<br />
+TDEE means Total Daily Energy Expenditure<br />
+BMR means Basal Metabolic Rate<br />
+PAL means Physical Activity Ratio<br />
+<br />
+The daily amount of food necessary to be consumed for your body (TDEE) is determined by your physical activity ratio (PAL) and your Basal Metabolic Rate (BMR). The latter of which is higher/lower depending on whether you're tall, or short. Being male, or female is also often said to make a difference (and as such, the <a href="http://www.weightlossforall.com/calculate%20cals.htm">Harris-Benedict equation</a> comes in 2 forms; one for a male and one for a female. The formula goes as follows:<br />
+* Men: BMR = 66 + (13.7 X weight in kg) + (5 X height in cm) - (6.8 X age in years)<br />
+* Women: BMR = 655 + (9.6 X weight in kg) + (1.8 X height in cm) - (4.7 X age in years)<br />
+), yet the difference is still quite small. Due to the small difference, in the graph, we equalised things for men and women.
+</p>
+
+<br />
+
+<h2>Doing the actual calculation</h2>
+
+Just below this text, you'll find the graph with the equalised values.
+
+<img src="./images/Dietary_reference_values.png" alt="Dietary reference values graph" width="300" border="0" title="Dietary reference values graph" />
+
+<table border = "1" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>Age in years:</td>
+			<td>kcal/d:</td>
+		</tr>
+			<td>0</td>
+			<td>BMR:375 x PAL:1,40 = 525 TDEE</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>BMR:525 x PAL:1,40 = 735 TDEE</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>BMR:625 x PAL:1,40 = 875 TDEE</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>BMR:750 x PAL:1,45 = 1050 TDEE</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>BMR:825 x PAL:1,45 = 1196,25 TDEE</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>BMR:850 x PAL:1,50 = 1275 TDEE</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>BMR:900 x PAL:1,55 = 1395 TDEE</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>BMR:950 x PAL:1,55 = 1472,5 TDEE</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>BMR:1000 x PAL:1,55 = 1550 TDEE</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>BMR:1100 x PAL:1,55 = 1705 TDEE</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>BMR:1150 x PAL:1,55 = 1782,5 TDEE</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>BMR:1200 x PAL:1,55 = 1860 TDEE</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>BMR:1275 x PAL:1,55 = 1976,25 TDEE</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>BMR:1350 x PAL:1,55 = 2092,5 TDEE</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>BMR:1425 x PAL:1,55 = 2205,75 TDEE</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>BMR:1475 x PAL:1,55 = 2286,25 TDEE</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>BMR:1575 x PAL:1,55 = 2441,25 TDEE</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>BMR:1625 x PAL:1,55 = 2518,75 TDEE</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>BMR:1675 x PAL:1,55 = 2596,25 TDEE</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+For the PAL's: the PAL's of people age 0 to 18 will probably be correct, yet can be off in cases where the person in question is extremely active, ... To correct the PAL's (of people aged 0-18 and for those of older people), use the PAL table below:<br />
+<br />
+
+<table border="1" cellpadding="5" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>Mean activity level</td>
+			<td>P.A.L. range</td>
+			<td>Average P.A.L.</td>
+			<td>Description of activities</td>
+		</tr>
+		<tr style="background:#ffffc0">
+			<td>Sedentary</td>
+			<td>1,175-1,375</td>
+			<td>1,2</td>
+			<td>No exercise, desk job; reading, watching TV, writing, calculating, playing cards, listening to music</td>
+		</tr>
+		<tr style="background:#e0ffe0">
+			<td>Lightly active</td>
+			<td>1,375-1,550</td>
+			<td>1,4</td>
+			<td>Little exercise, desk job; sewing, knitting, playing piano, cooking, washing up, ironing, writing, calculating, playing cards, dressing, undressing, showering, ...</td>
+		</tr>
+		<tr style="background:#e0ffe0">
+			<td>Moderatly active</td>
+			<td>1,550-1,725</td>
+			<td>1,6</td>
+			<td>Moderate exercise, non-desk job; easy household chores, dusting, cleaning, washing by hand, cooking, hairdressing, playing pool, driving, bowling, general office work.</td>
+		</tr>
+		<tr style="background:#ffffc0">
+			<td>Very active</td>
+			<td>1,725-1,900</td>
+			<td>1,8</td>
+			<td>Hard exercise, physically more demanding job; vacuuming, making beds, slow walking, cricket, tailoring, shoemaking, electrical, machine tool operating, painting, decorating.</td>
+		</tr>
+		<tr style="background:#ffb000">
+			<td>Extra active</td>
+			<td>1,900-...</td>
+			<td>2,0</td>
+			<td>Very hard exercise, physically demanding job; Mopping floor, gardening, cleaning windows, playing tennis, sailing, moderate swimming, cycling, slow jogging, moderate walking, playing golf, carpentry, joinery, bricklaying.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+For the dietary reference values for people with an age above 18, the extra number of years above 18 are multiplied by 6 (average 6,8 and 4,7 of male/female Harris-Benedict formula) and added to the BMR. Thus, older people will generally require a bit more calories than younger people (thus contrary to popular beliefs), but it is likely that the end result will nonetheless be smaller, since older people often become less active, and thus the PAL will generally reduce.
+</p>
+
+<p>Also note that the following TDEE's need to be added to the TDEE of women which are pregnant (and thus require more calories):<br />
+Months pregnant-- kcal/d to be added:<br />
+* 0-3 -- BMR:392,85 x PAL:1,40 = 550 TDEE<br />
+* 4-7 -- BMR:464,28 x PAL:1,40 = 650 TDEE<br />
+* 7-9 -- BMR:500 x PAL:1,40 = 700 TDEE<br />
+
+<h2>Further reading (references)</h2>
+
+<p>
+Where the table data comes from:<br />
+The table data was derived from the UN tables at http://www.fao.org/docrep/007/y5686e/y5686e00.HTM#Contents <br />
+<br />
+
+However, averages where made from the tables there, in order to create a unisex table. Keep in mind though that the table is only suitable as a reference value, and depending your genetic makeup (depending on whether your smaller/larger than average, male/female, weigh more/less, have more lean body mass (muscle tissue), ...), the BMR may differ and you will thus require more/less calories than the average presented here. If you're uncertain, use the Harris-Benedict equation instead, rather than relying on the values presented above.<br />
+<br />
+
+Data from 0-9 months was composed by taking averages of boys and girls from Table 3.2, Daily energy requirements<br />
+kcal/d data from 1-18 years was composed by taking averages of boys and girls from Table 4.2 and Table 4.3 BMRestc, kcal/d Note that "year 0" isn't shown, but was derived from table 3.2, also note that the PAL data was also averaged, yet no longer followed from year 7 onwards. The PAL's of these were: 1,60 , 1,65 , 1,65 , 1,7 , 1,75 , 1,75, 1,8 , 1,8, 1,8 , 1,75 , 1,75 and the caloric intake was thus: 1600, 1815, 1897, 2040, 2231, 2362, 2565, 2655, 2835, 2844, 2931 respectively. However, concluding from http://www.weightlossforall.com/calculate%20cals.htm these PAL's are by far too high since for comparison, it can be assumed that the activity level would keep to "moderately active", rather than up to "very active". The PAL only refers to the activity level and not any metabolic changes (these are incorporated only to the BMR).
+</div>
+
+<div id="footer" style="text-align:center">
+Content is made available under the <a href="./gpl-3.0.txt">GPL v3 license</a>.
+</div>
+
+</body>
+</html>

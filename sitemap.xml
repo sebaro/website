@@ -57,7 +57,11 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://sebaro.pro/nutricalc/</loc>
+		<loc>http://sebaro.pro/nutrio/</loc>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://sebaro.pro/quaero/</loc>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
