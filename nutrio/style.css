@@ -58,7 +58,7 @@ select {
 .select_stage {
   width: 350px;
   vertical-align: middle;
-  margin-left: 340px;
+  margin-left: 400px;
 }
 
 .select_food {
@@ -379,7 +379,7 @@ select {
 }
 
 #info {
-  width: 1000px;
+  width: 90%;
   color: #999999;
   font-size: 14px;
   display: inline-block;
