@@ -2,7 +2,7 @@
 	@licstart  The following is the entire license notice for the
 	JavaScript code in this page.
 
-	Copyright (C) 2010 - 2025 Sebastian Luncan
+	Copyright (C) 2025 Sebastian Luncan
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -49,6 +49,12 @@ var engines = {
 		'Web': 'https://yandex.com/search/?text=',
 		'Images': 'https://yandex.com/images/search?text=',
 		'Videos': 'https://yandex.com/video/search?text='
+	},
+	'IMDb': {
+		'Web': 'https://www.imdb.com/find/?q='
+	},
+	'TMDB': {
+		'Web': 'https://www.themoviedb.org/search?query='
 	},
 	'Wikipedia': {
 		'Web': 'https://en.wikipedia.org/w/index.php?search='
