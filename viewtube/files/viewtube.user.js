@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            ViewTube
-// @version         2025.10.15
+// @version         2025.12.18
 // @description     Watch videos from video sharing websites with extra options.
 // @author          sebaro
 // @namespace       http://sebaro.pro/viewtube
@@ -1332,14 +1332,23 @@ function ViewTube() {
 			var ytScriptFunc = getMyContent(ytScriptUrl, /('use strict'[\S\s]*;)\}/);
 			var ytUnscrambleSFuncName = getMyContent(ytScriptUrl, /[\w$]+&&\([\w$]+=([\w$]+)\([^\(]*?decodeURIComponent\(/);
 			var ytUnscrambleSFuncArgm = parseInt(getMyContent(ytScriptUrl, /[\w$]+&&\([\w$]+=[\w$]+\(([^\(]*?)decodeURIComponent\(/));
-			var ytUnscrambleNFuncName = getMyContent(ytScriptUrl, /(?:^|};)var\s+[\w$]+=\[([\w$]+)\];/);
+			var ytUnscrambleNFuncName = getMyContent(ytScriptUrl, /(?:^|};)(?:var\s+)?[\w$]+=\[([\w$]+)\];/);
 			var ytUnscrambleReturn = 'return {' + ytUnscrambleSFuncName + ':' + ytUnscrambleSFuncName + ', ' + ytUnscrambleNFuncName + ':' + ytUnscrambleNFuncName +'};';
-			var ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
-			ytUnscrambleParam['s'] = function(s) {
-				return (ytUnscrambleSFuncArgm) ? ytUnscrambleFunc[ytUnscrambleSFuncName](ytUnscrambleSFuncArgm, s) : ytUnscrambleFunc[ytUnscrambleSFuncName](s);
+			var ytUnscrambleFunc;
+			try {
+				ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
 			}
-			ytUnscrambleParam['n'] = function(n) {
-				return ytUnscrambleFunc[ytUnscrambleNFuncName](n);
+			catch(e) {
+				ytScriptFunc = getMyContent(ytScriptUrl, /'use strict';([\S\s]*;)\}/);
+				ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
+			}
+			if (ytUnscrambleFunc) {
+				ytUnscrambleParam['s'] = function(s) {
+					return (ytUnscrambleSFuncArgm) ? ytUnscrambleFunc[ytUnscrambleSFuncName](ytUnscrambleSFuncArgm, s) : ytUnscrambleFunc[ytUnscrambleSFuncName](s);
+				}
+				ytUnscrambleParam['n'] = function(n) {
+					return ytUnscrambleFunc[ytUnscrambleNFuncName](n);
+				}
 			}
 		}
 
@@ -1817,14 +1826,23 @@ function ViewTube() {
 			var ytScriptFunc = getMyContent(ytScriptUrl, /('use strict'[\S\s]*;)\}/);
 			var ytUnscrambleSFuncName = getMyContent(ytScriptUrl, /[\w$]+&&\([\w$]+=([\w$]+)\([^\(]*?decodeURIComponent\(/);
 			var ytUnscrambleSFuncArgm = parseInt(getMyContent(ytScriptUrl, /[\w$]+&&\([\w$]+=[\w$]+\(([^\(]*?)decodeURIComponent\(/));
-			var ytUnscrambleNFuncName = getMyContent(ytScriptUrl, /(?:^|};)var\s+[\w$]+=\[([\w$]+)\];/);
+			var ytUnscrambleNFuncName = getMyContent(ytScriptUrl, /(?:^|};)(?:var\s+)?[\w$]+=\[([\w$]+)\];/);
 			var ytUnscrambleReturn = 'return {' + ytUnscrambleSFuncName + ':' + ytUnscrambleSFuncName + ', ' + ytUnscrambleNFuncName + ':' + ytUnscrambleNFuncName +'};';
-			var ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
-			ytUnscrambleParam['s'] = function(s) {
-				return (ytUnscrambleSFuncArgm) ? ytUnscrambleFunc[ytUnscrambleSFuncName](ytUnscrambleSFuncArgm, s) : ytUnscrambleFunc[ytUnscrambleSFuncName](s);
+			var ytUnscrambleFunc;
+			try {
+				ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
 			}
-			ytUnscrambleParam['n'] = function(n) {
-				return ytUnscrambleFunc[ytUnscrambleNFuncName](n);
+			catch(e) {
+				ytScriptFunc = getMyContent(ytScriptUrl, /'use strict';([\S\s]*;)\}/);
+				ytUnscrambleFunc = new Function('g', ytScriptFunc + ytUnscrambleReturn)([]);
+			}
+			if (ytUnscrambleFunc) {
+				ytUnscrambleParam['s'] = function(s) {
+					return (ytUnscrambleSFuncArgm) ? ytUnscrambleFunc[ytUnscrambleSFuncName](ytUnscrambleSFuncArgm, s) : ytUnscrambleFunc[ytUnscrambleSFuncName](s);
+				}
+				ytUnscrambleParam['n'] = function(n) {
+					return ytUnscrambleFunc[ytUnscrambleNFuncName](n);
+				}
 			}
 		}
 
@@ -2616,7 +2634,7 @@ function ViewTube() {
 		if (imdbVideoTitle) imdbVideoTitle = cleanMyContent(imdbVideoTitle, false, true);
 
 		/* Get Videos Content */
-		var imdbVideosContent = getMyContent(page.url, /"playbackURLs":(\[.*?\])/);
+		var imdbVideosContent = getMyContent(page.url, /"playbackURLs":(\[.*?"PlaybackURL"\}\])/);
 		try {
 			imdbVideosContent = JSON.parse(imdbVideosContent);
 		}
